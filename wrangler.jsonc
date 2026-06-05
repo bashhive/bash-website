@@ -1,0 +1,11 @@
+{
+  // Cloudflare Worker (static assets only) for serving the BashHive site.
+  // Serves bashhive.eu (and optionally hivesec.eu) from the same repo.
+  // bash.pt stays on GitHub Pages (CNAME). No Worker script — assets-only.
+  "name": "bash-site",
+  "compatibility_date": "2026-06-05",
+  "assets": {
+    "directory": "./",
+    "not_found_handling": "single-page-application"
+  }
+}
