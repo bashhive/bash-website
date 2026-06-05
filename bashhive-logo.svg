@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 140" role="img" aria-label="BashHive — from bash.pt">
+  <style>
+    .wm{font-family:'Space Grotesk','Segoe UI',system-ui,sans-serif;font-weight:700;font-size:66px;letter-spacing:-1px;}
+    .tag{font-family:'Inter','Segoe UI',system-ui,sans-serif;font-weight:500;font-size:17px;letter-spacing:.5px;}
+  </style>
+  <!-- Mark -->
+  <g transform="translate(8,10)">
+    <path d="M106,60 L83,99.8 L37,99.8 L14,60 L37,20.2 L83,20.2 Z"
+          fill="none" stroke="#7B8ED4" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M44,44 L62,60 L44,76" fill="none" stroke="#00D4AA" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+    <rect x="68" y="68" width="18" height="8" rx="2" fill="#00D4AA"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="150" y="78" class="wm"><tspan fill="#4A5DA6">bash</tspan><tspan fill="#00D4AA">hive</tspan></text>
+  <!-- Tagline -->
+  <text x="152" y="110" class="tag" fill="#8B92B3">from bash.pt · AI-first by design</text>
+</svg>

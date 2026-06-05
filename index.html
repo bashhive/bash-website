@@ -5,18 +5,18 @@
     <meta name="robots" content="noindex, nofollow">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="BASH — AI-Powered Cybersecurity Advisory. Virtual CISO, Agentic AI SOC, Security Automation & Governance for digital businesses.">
-    <meta name="keywords" content="AI security, virtual CISO, agentic AI, SOC, ML security, observability, automation, IAM, GRC, NIS2, GDPR, penetration testing, Portugal">
+    <meta name="description" content="BashHive (bashhive.eu) — AI-first cybersecurity & governance for European SMEs. Virtual CISO, Agentic AI SOC, Security Automation & Governance. From bash.pt.">
+    <meta name="keywords" content="BashHive, bashhive.eu, AI security, virtual CISO, agentic AI, SOC, ML security, observability, automation, IAM, GRC, NIS2, DORA, GDPR, penetration testing, Portugal, Europe">
     <meta name="author" content="Rui Alexandre Ferreira">
-    <title>BASH — AI-Powered Cybersecurity Advisory</title>
+    <title>BashHive — AI-first cybersecurity &amp; governance · bashhive.eu</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
-    <meta property="og:title" content="BASH — AI-Powered Cybersecurity Advisory">
-    <meta property="og:description" content="Virtual CISO, Agentic AI SOC, Security Automation & Governance for digital businesses. 25+ years of enterprise security leadership.">
+    <meta property="og:title" content="BashHive — AI-first cybersecurity &amp; governance (bashhive.eu)">
+    <meta property="og:description" content="AI-first cybersecurity &amp; governance for European SMEs. Virtual CISO, Agentic AI SOC, Security Automation &amp; Governance. BashHive — from bash.pt.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bash.pt">
-    <meta property="og:image" content="https://bash.pt/bash-logo.png">
+    <meta property="og:image" content="https://bash.pt/bashhive-logo.png">
     <meta name="twitter:card" content="summary">
     <link rel="canonical" href="https://bash.pt">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -142,6 +142,9 @@
         .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 1.5rem; animation: fadeInUp 0.8s ease 0.2s forwards; opacity: 0; }
         .hero h1 .highlight { background: var(--gradient-accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
         .hero-subtitle { font-size: clamp(1.05rem, 2vw, 1.25rem); color: var(--text-secondary); max-width: 640px; margin: 0 auto 2.5rem; line-height: 1.7; animation: fadeInUp 0.8s ease 0.4s forwards; opacity: 0; }
+        .hero-brandline { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1rem, 2vw, 1.2rem); margin: 0 auto 1.75rem; letter-spacing: 0.3px; animation: fadeInUp 0.8s ease 0.5s forwards; opacity: 0; }
+        .hero-brandline strong { color: var(--accent); font-weight: 700; }
+        .hero-brandline span { color: var(--text-muted); font-weight: 500; }
         .hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; animation: fadeInUp 0.8s ease 0.6s forwards; opacity: 0; }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -345,8 +348,8 @@
 <!-- ── GATE ── -->
 <div id="bash-gate">
     <div class="gate-logo">
-        <img src="bash-logo.png" alt="BASH">
-        <span class="gate-logo-text">BASH</span>
+        <img src="bashhive-mark.svg" alt="BashHive">
+        <span class="gate-logo-text">bashhive<span style="color:var(--accent)">.eu</span></span>
     </div>
     <div class="gate-card">
         <span class="gate-lock">&#128274;</span>
@@ -359,7 +362,7 @@
         <button class="gate-btn" onclick="checkGate()">ENTRAR</button>
         <div class="gate-error" id="gate-err"></div>
     </div>
-    <div class="gate-footer">bash.pt &mdash; &copy; 2026 BASH</div>
+    <div class="gate-footer">bashhive.eu &mdash; from bash.pt &middot; &copy; 2026 BashHive</div>
 </div>
 
 <!-- ── SITE (hidden until auth) ── -->
@@ -367,7 +370,7 @@
 
     <!-- NAV -->
     <nav id="navbar">
-        <a href="#" class="nav-logo"><img src="bash-logo.png" alt="BASH" height="36"></a>
+        <a href="#" class="nav-logo" aria-label="BashHive — bashhive.eu"><img src="bashhive-mark.svg" alt="BashHive" height="36"><span class="nav-logo-text">bash<span style="color:var(--accent)">hive</span><span style="color:var(--text-muted);font-weight:500">.eu</span></span></a>
         <ul class="nav-links" id="navLinks">
             <li><a href="#services" data-lang="en">Services</a><a href="#services" data-lang="pt">Serviços</a></li>
             <li><a href="#expertise" data-lang="en">Expertise</a><a href="#expertise" data-lang="pt">Especialização</a></li>
@@ -397,6 +400,10 @@
 
             <p class="hero-subtitle" data-lang="en">Virtual CISO, Agentic AI SOC teams, ML-powered threat detection, and security automation advisory. 25+ years of enterprise security leadership.</p>
             <p class="hero-subtitle" data-lang="pt">CISO Virtual, equipas SOC com AI Agêntica, deteção de ameaças com ML e consultoria em automação de segurança. 25+ anos de liderança em segurança enterprise.</p>
+
+            <div class="hero-brandline">
+                <strong>bashhive.eu</strong> <span>— from bash.pt · AI-first by design</span>
+            </div>
 
             <div class="hero-ctas">
                 <a href="#contact" class="btn btn-primary" data-lang="en">Start a conversation &#8594;</a>
@@ -752,7 +759,7 @@
             document.getElementById('aspasia-toggle').style.display = aspasiaOpen ? 'none' : 'flex';
             if (aspasiaOpen && aspasiaHistory.length === 0) {
                 var isPT = document.body.classList.contains('lang-pt');
-                addAspasiaMsg('bot', isPT ? 'Olá! Sou a Aspasia, assistente da BASH. Como posso ajudar?' : 'Hello! I\'m Aspasia, BASH\'s assistant. How can I help?');
+                addAspasiaMsg('bot', isPT ? 'Olá! Sou a Aspasia, assistente da BashHive. Como posso ajudar?' : 'Hello! I\'m Aspasia, BashHive\'s assistant. How can I help?');
             }
             if (aspasiaOpen) document.getElementById('aspasia-input').focus();
         }

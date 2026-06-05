@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="BashHive mark">
+  <!-- Hive (hexagon) in the bash monoline style -->
+  <path d="M106,60 L83,99.8 L37,99.8 L14,60 L37,20.2 L83,20.2 Z"
+        fill="none" stroke="#7B8ED4" stroke-width="8"
+        stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- Bash shell prompt  >_  -->
+  <path d="M44,44 L62,60 L44,76" fill="none" stroke="#00D4AA"
+        stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+  <rect x="68" y="68" width="18" height="8" rx="2" fill="#00D4AA"/>
+</svg>
