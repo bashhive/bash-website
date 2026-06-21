@@ -253,6 +253,12 @@
         a[data-lang="pt"] { display: none; }
         body.lang-pt a[data-lang="pt"] { display: inline-flex; }
         body.lang-pt a[data-lang="en"] { display: none; }
+
+        /* Brand-variant hero copy: commercial (default) vs governance (hivesec.eu).
+           Toggled by body.brand-hivesec; inner data-lang spans still work as usual. */
+        .v-gov { display: none; }
+        body.brand-hivesec .v-cmrc { display: none; }
+        body.brand-hivesec .v-gov { display: block; }
     </style>
 
     <!-- ── Gate UI Styles ── -->
@@ -391,26 +397,54 @@
     <!-- HERO -->
     <section class="hero" id="hero">
         <div class="hero-content">
-            <div class="hero-badge">
-                <span data-lang="en">AI-Powered Security</span>
-                <span data-lang="pt">Segurança Potenciada por AI</span>
+            <!-- COMMERCIAL hero (bash.pt / bashhive.eu) -->
+            <div class="v-cmrc">
+                <div class="hero-badge">
+                    <span data-lang="en">AI-Powered Security</span>
+                    <span data-lang="pt">Segurança Potenciada por AI</span>
+                </div>
+
+                <h1 data-lang="en">Cybersecurity driven by <span class="highlight">intelligent automation</span></h1>
+                <h1 data-lang="pt">Cibersegurança guiada por <span class="highlight">automação inteligente</span></h1>
+
+                <p class="hero-subtitle" data-lang="en">Virtual CISO, Agentic AI SOC teams, ML-powered threat detection, and security automation advisory. 25+ years of enterprise security leadership.</p>
+                <p class="hero-subtitle" data-lang="pt">CISO Virtual, equipas SOC com AI Agêntica, deteção de ameaças com ML e consultoria em automação de segurança. 25+ anos de liderança em segurança enterprise.</p>
+
+                <div class="hero-brandline">
+                    <strong>bashhive.eu</strong> <span>— from bash.pt · AI-first by design</span>
+                </div>
+
+                <div class="hero-ctas">
+                    <a href="#contact" class="btn btn-primary" data-lang="en">Start a conversation &#8594;</a>
+                    <a href="#contact" class="btn btn-primary" data-lang="pt">Iniciar conversa &#8594;</a>
+                    <a href="#services" class="btn btn-outline" data-lang="en">Explore services</a>
+                    <a href="#services" class="btn btn-outline" data-lang="pt">Explorar serviços</a>
+                </div>
             </div>
 
-            <h1 data-lang="en">Cybersecurity driven by <span class="highlight">intelligent automation</span></h1>
-            <h1 data-lang="pt">Cibersegurança guiada por <span class="highlight">automação inteligente</span></h1>
+            <!-- GOVERNANCE hero (hivesec.eu — the formal/umbrella face) -->
+            <div class="v-gov">
+                <div class="hero-badge">
+                    <span data-lang="en">Governance &amp; Compliance</span>
+                    <span data-lang="pt">Governação &amp; Compliance</span>
+                </div>
 
-            <p class="hero-subtitle" data-lang="en">Virtual CISO, Agentic AI SOC teams, ML-powered threat detection, and security automation advisory. 25+ years of enterprise security leadership.</p>
-            <p class="hero-subtitle" data-lang="pt">CISO Virtual, equipas SOC com AI Agêntica, deteção de ameaças com ML e consultoria em automação de segurança. 25+ anos de liderança em segurança enterprise.</p>
+                <h1 data-lang="en">Your <span class="highlight">digital bodyguard</span> for NIS2, DORA &amp; the EU AI Act</h1>
+                <h1 data-lang="pt">O seu <span class="highlight">guarda-costas digital</span> para NIS2, DORA e o EU AI Act</h1>
 
-            <div class="hero-brandline">
-                <strong>bashhive.eu</strong> <span>— from bash.pt · AI-first by design</span>
-            </div>
+                <p class="hero-subtitle" data-lang="en">The formal security &amp; governance umbrella: vCISO, board reporting, NIS2/DORA readiness, EU AI Act advisory and GRC. Execution delivered by BashHive. 25+ years of enterprise security leadership.</p>
+                <p class="hero-subtitle" data-lang="pt">O guarda-chuva formal de segurança e governação: vCISO, reporte ao board, prontidão NIS2/DORA, consultoria EU AI Act e GRC. Execução entregue pela BashHive. 25+ anos de liderança em segurança enterprise.</p>
 
-            <div class="hero-ctas">
-                <a href="#contact" class="btn btn-primary" data-lang="en">Start a conversation &#8594;</a>
-                <a href="#contact" class="btn btn-primary" data-lang="pt">Iniciar conversa &#8594;</a>
-                <a href="#services" class="btn btn-outline" data-lang="en">Explore services</a>
-                <a href="#services" class="btn btn-outline" data-lang="pt">Explorar serviços</a>
+                <div class="hero-brandline">
+                    <strong>hivesec.eu</strong> <span>— governance umbrella · from bash.pt</span>
+                </div>
+
+                <div class="hero-ctas">
+                    <a href="#contact" class="btn btn-primary" data-lang="en">Request a board briefing &#8594;</a>
+                    <a href="#contact" class="btn btn-primary" data-lang="pt">Pedir briefing ao board &#8594;</a>
+                    <a href="#services" class="btn btn-outline" data-lang="en">Governance services</a>
+                    <a href="#services" class="btn btn-outline" data-lang="pt">Serviços de governação</a>
+                </div>
             </div>
         </div>
     </section>
@@ -870,7 +904,7 @@
         var BRAND = (function () {
             var h = (location.hostname || '').replace(/^www\./, '').toLowerCase();
             if (h === 'hivesec.eu') return {
-                lang: 'en', child: 'HiveSec', aria: 'HiveSec — hivesec.eu',
+                lang: 'en', child: 'HiveSec', aria: 'HiveSec — hivesec.eu', gov: true,
                 nav:  'hive<span style="color:var(--accent)">sec</span><span style="color:var(--text-muted);font-weight:500">.eu</span>',
                 gate: 'hivesec<span style="color:var(--accent)">.eu</span>'
             };
@@ -891,6 +925,8 @@
             var a = document.getElementById('navLogo');  if (a) a.setAttribute('aria-label', BRAND.aria);
             var g = document.getElementById('gateBrand'); if (g) g.innerHTML = BRAND.gate;
             document.querySelectorAll('.footer-child').forEach(function (el) { el.textContent = BRAND.child; });
+            // Governance face (hivesec.eu): swap hero copy to the NIS2/DORA/board narrative.
+            document.body.classList.toggle('brand-hivesec', !!BRAND.gov);
         })();
         setLang(BRAND.lang);
 
