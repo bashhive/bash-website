@@ -1,11 +1,26 @@
 {
   // Cloudflare Worker (static assets only) for serving the BashHive site.
-  // Serves bashhive.eu (and optionally hivesec.eu) from the same repo.
+  // Serves BOTH bashhive.eu and hivesec.eu from this same repo/build.
   // bash.pt stays on GitHub Pages (CNAME). No Worker script — assets-only.
+  //
+  // The site is domain-aware: index.html switches top logo / language /
+  // footer child brand by location.hostname. So the SAME files serve all
+  // three front-doors — hivesec.eu must hit the Worker (NOT a 301) to render
+  // as HIVESEC.EU. The custom_domain routes below attach both .eu apexes to
+  // this Worker on `wrangler deploy`.
+  //
+  // IMPORTANT (manual, Cloudflare dashboard): delete the existing
+  // hivesec.eu Redirect Rule (301 -> bash.pt). Redirect Rules run before the
+  // Worker, so while it exists hivesec.eu will keep redirecting and never
+  // reach these routes.
   "name": "bash-site",
   "compatibility_date": "2026-06-05",
   "assets": {
     "directory": "./",
     "not_found_handling": "single-page-application"
-  }
+  },
+  "routes": [
+    { "pattern": "bashhive.eu", "custom_domain": true },
+    { "pattern": "hivesec.eu", "custom_domain": true }
+  ]
 }
