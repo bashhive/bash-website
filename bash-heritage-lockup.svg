@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 140" role="img" aria-label="bash.pt — the origin shell, Bourne Again">
+  <style>
+    .wm{font-family:'Space Grotesk','Segoe UI',system-ui,sans-serif;font-weight:700;font-size:66px;letter-spacing:-1px;}
+    .tag{font-family:'Inter','Segoe UI',system-ui,sans-serif;font-weight:500;font-size:16px;letter-spacing:.5px;}
+  </style>
+  <!-- Heritage = the bare >_ prompt (the seed of the whole system), no hexagon.
+       Chevron in periwinkle (heritage stroke) + square cursor in teal (the living signature, never recoloured). -->
+  <g transform="translate(14,42)">
+    <path d="M0,0 L28,28 L0,56" fill="none" stroke="#7B8ED4" stroke-width="8"
+          stroke-linejoin="round" stroke-linecap="round"/>
+    <rect x="40" y="46" width="22" height="9" rx="2" fill="#00D4AA"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="110" y="92" class="wm"><tspan fill="#7B8ED4">bash</tspan><tspan fill="#8B92B3">.pt</tspan></text>
+  <!-- Tagline -->
+  <text x="112" y="120" class="tag" fill="#8B92B3">the origin · Bourne Again shell</text>
+</svg>

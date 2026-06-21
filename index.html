@@ -26,6 +26,7 @@
         :root {
             --brand-blue: #4A5DA6;
             --brand-deep: #2C3A6E;
+            --hivesec: #2C3A6E;   /* semantic alias: formal / governance layer (HiveSec). Deep-blue for light/print; on dark use --brand-light. */
             --brand-light: #7B8ED4;
             --accent: #00D4AA;
             --accent-glow: rgba(0, 212, 170, 0.15);
@@ -654,6 +655,35 @@
         </div>
     </section>
 
+    <!-- ── FOOTER / BRAND UMBRELLA ── -->
+    <style>
+        .site-footer { background: var(--dark); border-top: 1px solid var(--dark-border); padding: 3rem 2rem; }
+        .footer-inner { max-width: 760px; margin: 0 auto; text-align: center; }
+        .footer-seal { display: inline-flex; align-items: center; gap: 0.6rem; margin-bottom: 1rem; }
+        .footer-seal svg { width: 34px; height: 34px; }
+        .footer-seal span { font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 0.95rem; color: var(--brand-light); letter-spacing: 0.5px; }
+        .footer-note { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; margin-bottom: 1rem; }
+        .footer-note a { color: var(--brand-light); text-decoration: none; border-bottom: 1px solid var(--accent); }
+        .footer-copy { color: var(--text-muted); font-size: 0.8rem; letter-spacing: 0.3px; }
+    </style>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-seal">
+                <svg viewBox="0 0 169 168" role="img" aria-label="HiveSec — security and governance umbrella">
+                    <g fill="none" stroke="var(--brand-light)" stroke-width="8" stroke-linejoin="round" stroke-linecap="round">
+                        <path d="M96,44 L73,83.8 L27,83.8 L4,44 L27,4.2 L73,4.2 Z"/>
+                        <path d="M96,123.6 L73,163.4 L27,163.4 L4,123.6 L27,83.8 L73,83.8 Z"/>
+                        <path d="M165,83.8 L142,123.6 L96,123.6 L73,83.8 L96,44 L142,44 Z"/>
+                    </g>
+                </svg>
+                <span>HiveSec</span>
+            </div>
+            <p class="footer-note" data-lang="en"><strong style="color:var(--text-primary)">HiveSec</strong> is the security &amp; governance umbrella; <strong style="color:var(--text-primary)">BashHive</strong> is the commercial brand, operated from <a href="https://bash.pt">bash.pt</a>.</p>
+            <p class="footer-note" data-lang="pt"><strong style="color:var(--text-primary)">HiveSec</strong> é o guarda-chuva de segurança e governance; <strong style="color:var(--text-primary)">BashHive</strong> é a marca comercial, operada a partir de <a href="https://bash.pt">bash.pt</a>.</p>
+            <p class="footer-copy">© <span id="footer-year"></span> BashHive — from bash.pt · AI-first by design</p>
+        </div>
+    </footer>
+    <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
 
     <!-- ASPASIA CHAT WIDGET -->
     <div id="aspasia-widget">

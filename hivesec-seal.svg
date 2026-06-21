@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 184" role="img" aria-label="HiveSec — security and governance umbrella, from bash.pt">
+  <style>
+    .wm{font-family:'Space Grotesk','Segoe UI',system-ui,sans-serif;font-weight:700;font-size:62px;letter-spacing:-1px;}
+    .tag{font-family:'Inter','Segoe UI',system-ui,sans-serif;font-weight:500;font-size:16px;letter-spacing:.4px;}
+  </style>
+  <!-- Reuses the exact bashhive cell geometry (width 92, stroke 8), centred at origin -->
+  <defs>
+    <path id="hx" d="M46,0 L23,39.8 L-23,39.8 L-46,0 L-23,-39.8 L23,-39.8 Z"
+          fill="none" stroke="#2C3A6E" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+  </defs>
+  <!-- Favo: three monoline cells = "the structure that contains" (governance umbrella).
+       Deliberately NO >_ prompt: the shell signature stays exclusive to BASH / BashHive (execution);
+       HiveSec is the architecture, not the shell. Monochrome deep-blue = formal, board-facing. -->
+  <g transform="translate(58,51.8)">
+    <use href="#hx" transform="translate(0,0)"/>
+    <use href="#hx" transform="translate(0,79.6)"/>
+    <use href="#hx" transform="translate(69,39.8)"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="210" y="112" class="wm" fill="#2C3A6E">HiveSec</text>
+  <!-- Endorsement line -->
+  <text x="212" y="142" class="tag" fill="#8B92B3">security &amp; governance · from bash.pt</text>
+</svg>
