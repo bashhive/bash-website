@@ -350,7 +350,7 @@
 <div id="bash-gate">
     <div class="gate-logo">
         <img src="bashhive-mark.svg" alt="BashHive">
-        <span class="gate-logo-text">bashhive<span style="color:var(--accent)">.eu</span></span>
+        <span class="gate-logo-text" id="gateBrand">bashhive<span style="color:var(--accent)">.eu</span></span>
     </div>
     <div class="gate-card">
         <span class="gate-lock">&#128274;</span>
@@ -371,7 +371,7 @@
 
     <!-- NAV -->
     <nav id="navbar">
-        <a href="#" class="nav-logo" aria-label="BashHive — bashhive.eu"><img src="bashhive-mark.svg" alt="BashHive" height="36"><span class="nav-logo-text">bash<span style="color:var(--accent)">hive</span><span style="color:var(--text-muted);font-weight:500">.eu</span></span></a>
+        <a href="#" id="navLogo" class="nav-logo" aria-label="BashHive — bashhive.eu"><img src="bashhive-mark.svg" alt="BashHive" height="36"><span class="nav-logo-text" id="navBrand">bash<span style="color:var(--accent)">hive</span><span style="color:var(--text-muted);font-weight:500">.eu</span></span></a>
         <ul class="nav-links" id="navLinks">
             <li><a href="#services" data-lang="en">Services</a><a href="#services" data-lang="pt">Serviços</a></li>
             <li><a href="#expertise" data-lang="en">Expertise</a><a href="#expertise" data-lang="pt">Especialização</a></li>
@@ -678,9 +678,8 @@
                 </svg>
                 <span>HiveSec</span>
             </div>
-            <p class="footer-note" data-lang="en"><strong style="color:var(--text-primary)">HiveSec</strong> is the security &amp; governance umbrella; <strong style="color:var(--text-primary)">BashHive</strong> is the commercial brand, operated from <a href="https://bash.pt">bash.pt</a>.</p>
-            <p class="footer-note" data-lang="pt"><strong style="color:var(--text-primary)">HiveSec</strong> é o guarda-chuva de segurança e governance; <strong style="color:var(--text-primary)">BashHive</strong> é a marca comercial, operada a partir de <a href="https://bash.pt">bash.pt</a>.</p>
-            <p class="footer-copy">© <span id="footer-year"></span> BashHive — from bash.pt · AI-first by design</p>
+            <p class="footer-note"><strong style="color:var(--text-primary)">HiveSec</strong> — digital bodyguard. <strong class="footer-child" style="color:var(--text-primary)">BashHive</strong> borned by BASH.</p>
+            <p class="footer-copy">© <span id="footer-year"></span> <span class="footer-child">BashHive</span> — from bash.pt · AI-first by design</p>
         </div>
     </footer>
     <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
@@ -865,7 +864,35 @@
                 if (el.getBoundingClientRect().top < window.innerHeight - 50) el.classList.add('visible');
             });
         }
-        (function() { var l = navigator.language || navigator.userLanguage; if (l && l.startsWith('pt')) setLang('pt'); })();
+        // ── DOMAIN-AWARE BRAND ──────────────────────────────────────────────
+        // One file, three front-doors. The brand shown (top logo, language,
+        // footer child) is decided by the hostname the visitor arrived on.
+        var BRAND = (function () {
+            var h = (location.hostname || '').replace(/^www\./, '').toLowerCase();
+            if (h === 'hivesec.eu') return {
+                lang: 'en', child: 'HiveSec', aria: 'HiveSec — hivesec.eu',
+                nav:  'hive<span style="color:var(--accent)">sec</span><span style="color:var(--text-muted);font-weight:500">.eu</span>',
+                gate: 'hivesec<span style="color:var(--accent)">.eu</span>'
+            };
+            if (h === 'bash.pt') return {
+                lang: 'pt', child: 'BASH', aria: 'BASH — bash.pt',
+                nav:  'bash<span style="color:var(--text-muted);font-weight:500">.pt</span>',
+                gate: 'bash<span style="color:var(--accent)">.pt</span>'
+            };
+            // default: bashhive.eu (also localhost / previews)
+            return {
+                lang: 'en', child: 'BashHive', aria: 'BashHive — bashhive.eu',
+                nav:  'bash<span style="color:var(--accent)">hive</span><span style="color:var(--text-muted);font-weight:500">.eu</span>',
+                gate: 'bashhive<span style="color:var(--accent)">.eu</span>'
+            };
+        })();
+        (function applyBrand() {
+            var n = document.getElementById('navBrand'); if (n) n.innerHTML = BRAND.nav;
+            var a = document.getElementById('navLogo');  if (a) a.setAttribute('aria-label', BRAND.aria);
+            var g = document.getElementById('gateBrand'); if (g) g.innerHTML = BRAND.gate;
+            document.querySelectorAll('.footer-child').forEach(function (el) { el.textContent = BRAND.child; });
+        })();
+        setLang(BRAND.lang);
 
         function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
 
