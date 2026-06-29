@@ -1,5 +1,14 @@
 {
   "schema_version": 1,
-  "updated_at": null,
-  "alerts": []
+  "updated_at": "2026-06-29T17:10:47+00:00",
+  "alerts": [
+    {
+      "id": "hivesec-21faa221790ab329743335f0",
+      "title": "HiveSec Sentinel — Operation Endgame 4.0",
+      "message": "• Exposição reportada por hibp-global associada a None.\n• Contas/registos potencialmente afetados: 4 160 519.\n• Alterar imediatamente a credencial afetada por uma única e aleatória.\n• Revogar sessões/tokens ativos e ativar MFA ou passkey.\n• Verificar reutilização da mesma credencial noutros serviços.",
+      "severity": "critical",
+      "source": "HiveSec Sentinel",
+      "published_at": "2026-06-29T17:10:34+00:00"
+    }
+  ]
 }
