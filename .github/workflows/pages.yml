@@ -1,0 +1,61 @@
+name: Publish BASH site and security alerts
+
+on:
+  push:
+    branches: [main]
+  repository_dispatch:
+    types: [security-alert]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Test alert contract
+        run: python3 -m unittest discover -s .github/scripts -p 'test_*.py'
+
+      - name: Validate and store HiveSec Sentinel alert
+        if: github.event_name == 'repository_dispatch'
+        run: python3 .github/scripts/publish_alert.py
+
+      - name: Persist public feed
+        if: github.event_name == 'repository_dispatch'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add alerts/feed.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish HiveSec Sentinel alert"
+            git push
+          fi
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

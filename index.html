@@ -718,171 +718,174 @@
     </footer>
     <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
 
-    <!-- ASPASIA CHAT WIDGET -->
-    <div id="aspasia-widget">
-        <div id="aspasia-toggle" onclick="toggleAspasia()">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        </div>
-        <div id="aspasia-chat" style="display:none;">
-            <div id="aspasia-header">
-                <span data-lang="pt">Aspasia — Fale Connosco</span><span data-lang="en">Aspasia — Talk to Us</span>
-                <button onclick="toggleAspasia()" id="aspasia-close">&times;</button>
+    <!-- HIVESEC SENTINEL — READ-ONLY SECURITY ALERTS -->
+    <div id="sentinel-widget">
+        <button id="sentinel-toggle" type="button" onclick="toggleSentinel()" aria-label="Open security alerts" aria-expanded="false">
+            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        </button>
+        <section id="sentinel-panel" hidden aria-live="polite">
+            <header id="sentinel-header">
+                <div>
+                    <strong>HiveSec Sentinel</strong>
+                    <small data-lang="en">Security intelligence from HiveSec Sentinel</small>
+                    <small data-lang="pt">Inteligência de segurança do HiveSec Sentinel</small>
+                </div>
+                <button onclick="toggleSentinel()" id="sentinel-close" type="button" aria-label="Close">&times;</button>
+            </header>
+            <div id="sentinel-alerts">
+                <p class="sentinel-state" data-lang="en">Loading security alerts…</p>
+                <p class="sentinel-state" data-lang="pt">A carregar alertas de segurança…</p>
             </div>
-            <div id="aspasia-messages"></div>
-            <div id="aspasia-input-area">
-                <input type="text" id="aspasia-input" data-placeholder-pt="Escreva a sua mensagem..." data-placeholder-en="Type your message..." placeholder="Escreva a sua mensagem..." onkeydown="if(event.key==='Enter')sendAspasia()">
-                <button onclick="sendAspasia()" id="aspasia-send">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                </button>
-            </div>
-        </div>
+            <footer id="sentinel-footer">
+                <span data-lang="en">Read-only alert channel</span>
+                <span data-lang="pt">Canal de alertas só de leitura</span>
+                <a href="https://t.me/hivesecsentinelbot" target="_blank" rel="noopener noreferrer">@hivesecsentinelbot</a>
+            </footer>
+        </section>
     </div>
     <style>
-        /* ── ASPASIA WIDGET ── */
-        #aspasia-toggle {
+        #sentinel-toggle {
             position: fixed; bottom: 24px; right: 24px; z-index: 9999;
-            width: 56px; height: 56px; border-radius: 50%;
+            width: 56px; height: 56px; border: 0; border-radius: 50%;
             background: linear-gradient(135deg, #4A5DA6, #00D4AA);
             color: #fff; display: flex; align-items: center; justify-content: center;
             cursor: pointer; box-shadow: 0 4px 20px rgba(0,212,170,0.3);
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        #aspasia-toggle:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(0,212,170,0.45); }
-        #aspasia-chat {
+        #sentinel-toggle:hover { transform: scale(1.08); box-shadow: 0 6px 30px rgba(0,212,170,0.45); }
+        #sentinel-toggle:focus-visible, #sentinel-close:focus-visible, #sentinel-footer a:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+        #sentinel-panel {
             position: fixed; bottom: 90px; right: 24px; z-index: 9999;
-            width: 370px; height: 500px; border-radius: 16px; overflow: hidden;
-            background: #0A0E1A; border: 1px solid #1E2540;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-            display: flex; flex-direction: column;
+            width: min(410px, calc(100vw - 32px)); max-height: min(610px, calc(100vh - 120px));
+            border-radius: 16px; overflow: hidden; background: #0A0E1A;
+            border: 1px solid #1E2540; box-shadow: 0 20px 60px rgba(0,0,0,0.5);
             font-family: 'Inter', -apple-system, sans-serif;
         }
-        #aspasia-header {
+        #sentinel-panel:not([hidden]) { display: flex; flex-direction: column; }
+        #sentinel-header {
             background: linear-gradient(135deg, #4A5DA6, #00D4AA);
-            color: #fff; padding: 14px 16px; font-size: 0.9rem; font-weight: 600;
-            display: flex; justify-content: space-between; align-items: center;
-            letter-spacing: 0.3px;
+            color: #fff; padding: 14px 16px; display: flex;
+            justify-content: space-between; align-items: flex-start; gap: 1rem;
         }
-        #aspasia-close {
-            background: none; border: none; color: #fff; font-size: 1.4rem;
-            cursor: pointer; line-height: 1; padding: 0 4px; opacity: 0.8;
+        #sentinel-header strong { display: block; font-size: 0.95rem; letter-spacing: 0.2px; }
+        #sentinel-header small { margin-top: 2px; font-size: 0.72rem; opacity: 0.85; }
+        body:not(.lang-pt) #sentinel-header [data-lang="en"] { display: block; }
+        body:not(.lang-pt) #sentinel-header [data-lang="pt"] { display: none; }
+        body.lang-pt #sentinel-header [data-lang="en"] { display: none; }
+        body.lang-pt #sentinel-header [data-lang="pt"] { display: block; }
+        body:not(.lang-pt) #sentinel-footer [data-lang="pt"],
+        body.lang-pt #sentinel-footer [data-lang="en"] { display: none; }
+        #sentinel-close {
+            background: none; border: none; color: #fff; font-size: 1.5rem;
+            cursor: pointer; line-height: 1; padding: 0 4px; opacity: 0.85;
         }
-        #aspasia-close:hover { opacity: 1; }
-        #aspasia-messages {
-            flex: 1; overflow-y: auto; padding: 16px;
+        #sentinel-alerts {
+            min-height: 180px; overflow-y: auto; padding: 14px;
             display: flex; flex-direction: column; gap: 10px;
             scrollbar-width: thin; scrollbar-color: #1E2540 transparent;
         }
-        #aspasia-messages::-webkit-scrollbar { width: 6px; }
-        #aspasia-messages::-webkit-scrollbar-thumb { background: #1E2540; border-radius: 3px; }
-        .aspasia-msg {
-            max-width: 85%; padding: 10px 14px; border-radius: 12px;
-            font-size: 0.88rem; line-height: 1.5; word-wrap: break-word;
+        .sentinel-state { color: #8B92B3; font-size: 0.86rem; line-height: 1.5; margin: auto; text-align: center; }
+        .sentinel-alert {
+            background: #111627; border: 1px solid #1E2540; border-left: 3px solid #4A5DA6;
+            border-radius: 10px; padding: 12px;
         }
-        .aspasia-msg.user {
-            align-self: flex-end; background: linear-gradient(135deg, #4A5DA6, #2C3A6E);
-            color: #F0F2FF; border-bottom-right-radius: 4px;
+        .sentinel-alert[data-severity="critical"] { border-left-color: #FF6B6B; }
+        .sentinel-alert[data-severity="warning"] { border-left-color: #F4C95D; }
+        .sentinel-alert h3 { color: #F0F2FF; font-size: 0.9rem; line-height: 1.35; margin: 0 0 7px; }
+        .sentinel-alert p { color: #A9AFC8; font-size: 0.8rem; line-height: 1.48; margin: 0; white-space: pre-line; overflow-wrap: anywhere; }
+        .sentinel-alert time { color: #69718F; display: block; font-size: 0.7rem; margin-top: 9px; }
+        #sentinel-footer {
+            padding: 10px 14px; border-top: 1px solid #1E2540; background: #111627;
+            color: #69718F; display: flex; justify-content: space-between; gap: 1rem;
+            font-size: 0.72rem;
         }
-        .aspasia-msg.bot {
-            align-self: flex-start; background: #111627; color: #8B92B3;
-            border: 1px solid #1E2540; border-bottom-left-radius: 4px;
-        }
-        .aspasia-msg.bot strong { color: #F0F2FF; }
-        .aspasia-typing { align-self: flex-start; color: #5A6180; font-size: 0.82rem; font-style: italic; padding: 6px 0; }
-        #aspasia-input-area {
-            display: flex; gap: 8px; padding: 12px 14px;
-            background: #111627; border-top: 1px solid #1E2540;
-        }
-        #aspasia-input {
-            flex: 1; background: #0A0E1A; border: 1px solid #1E2540; border-radius: 8px;
-            padding: 10px 12px; color: #F0F2FF; font-size: 0.88rem;
-            font-family: inherit; outline: none; transition: border-color 0.3s;
-        }
-        #aspasia-input::placeholder { color: #5A6180; }
-        #aspasia-input:focus { border-color: #4A5DA6; }
-        #aspasia-send {
-            background: linear-gradient(135deg, #4A5DA6, #00D4AA); border: none;
-            border-radius: 8px; width: 40px; height: 40px; color: #fff;
-            cursor: pointer; display: flex; align-items: center; justify-content: center;
-            transition: opacity 0.3s;
-        }
-        #aspasia-send:hover { opacity: 0.85; }
+        #sentinel-footer a { color: #00D4AA; text-decoration: none; }
         @media (max-width: 480px) {
-            #aspasia-chat { width: calc(100vw - 32px); right: 16px; bottom: 80px; height: 60vh; }
-            #aspasia-toggle { bottom: 16px; right: 16px; }
+            #sentinel-panel { right: 16px; bottom: 80px; max-height: calc(100vh - 104px); }
+            #sentinel-toggle { right: 16px; bottom: 16px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            #sentinel-toggle { transition: none; }
         }
     </style>
     <script>
-        /* ── Aspasia Chat Logic ── */
-        var aspasiaOpen = false;
-        var aspasiaHistory = JSON.parse(sessionStorage.getItem('aspasia_history') || '[]');
+        var sentinelOpen = false;
+        var sentinelLoaded = false;
+        var sentinelFeedUrl = ['localhost', '127.0.0.1'].includes(location.hostname)
+            ? 'alerts/feed.json'
+            : 'https://bash.pt/alerts/feed.json';
 
-        function toggleAspasia() {
-            aspasiaOpen = !aspasiaOpen;
-            document.getElementById('aspasia-chat').style.display = aspasiaOpen ? 'flex' : 'none';
-            document.getElementById('aspasia-toggle').style.display = aspasiaOpen ? 'none' : 'flex';
-            if (aspasiaOpen && aspasiaHistory.length === 0) {
-                var isPT = document.body.classList.contains('lang-pt');
-                addAspasiaMsg('bot', isPT ? 'Olá! Sou a Aspasia, assistente da BashHive. Como posso ajudar?' : 'Hello! I\'m Aspasia, BashHive\'s assistant. How can I help?');
+        function toggleSentinel() {
+            sentinelOpen = !sentinelOpen;
+            var panel = document.getElementById('sentinel-panel');
+            var toggle = document.getElementById('sentinel-toggle');
+            panel.hidden = !sentinelOpen;
+            toggle.style.display = sentinelOpen ? 'none' : 'flex';
+            toggle.setAttribute('aria-expanded', sentinelOpen ? 'true' : 'false');
+            if (sentinelOpen) {
+                loadSentinelAlerts();
+                document.getElementById('sentinel-close').focus();
+            } else {
+                toggle.focus();
             }
-            if (aspasiaOpen) document.getElementById('aspasia-input').focus();
         }
 
-        function addAspasiaMsg(role, text) {
-            var container = document.getElementById('aspasia-messages');
-            var div = document.createElement('div');
-            div.className = 'aspasia-msg ' + role;
-            div.innerHTML = text;
-            container.appendChild(div);
-            container.scrollTop = container.scrollHeight;
-            aspasiaHistory.push({ role: role, text: text });
-            sessionStorage.setItem('aspasia_history', JSON.stringify(aspasiaHistory));
-        }
-
-        function sendAspasia() {
-            var input = document.getElementById('aspasia-input');
-            var msg = input.value.trim();
-            if (!msg) return;
-            input.value = '';
-            addAspasiaMsg('user', msg);
-
-            var isPT = document.body.classList.contains('lang-pt');
-            var lang = isPT ? 'pt' : 'en';
-
-            var typing = document.createElement('div');
-            typing.className = 'aspasia-typing';
-            typing.textContent = isPT ? 'Aspasia está a escrever...' : 'Aspasia is typing...';
-            var container = document.getElementById('aspasia-messages');
-            container.appendChild(typing);
-            container.scrollTop = container.scrollHeight;
-
-            var langInstruction = isPT ? '[Responde em Português de Portugal] ' : '[Respond in English] ';
-
-            fetch('https://aspasia-bot.vercel.app/api/chat', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ message: langInstruction + msg, language: lang })
-            })
-            .then(function(r) { return r.json(); })
-            .then(function(data) {
-                if (typing.parentNode) typing.parentNode.removeChild(typing);
-                addAspasiaMsg('bot', data.response || data.reply || data.message || (isPT ? 'Desculpe, não consegui processar o seu pedido.' : 'Sorry, I could not process your request.'));
-            })
-            .catch(function() {
-                if (typing.parentNode) typing.parentNode.removeChild(typing);
-                addAspasiaMsg('bot', isPT ? 'Erro de ligação. Tente novamente mais tarde.' : 'Connection error. Please try again later.');
+        function sentinelState(en, pt) {
+            var container = document.getElementById('sentinel-alerts');
+            container.replaceChildren();
+            ['en', 'pt'].forEach(function(lang) {
+                var state = document.createElement('p');
+                state.className = 'sentinel-state';
+                state.setAttribute('data-lang', lang);
+                state.textContent = lang === 'pt' ? pt : en;
+                container.appendChild(state);
             });
         }
 
-        /* Restore session history on load */
-        (function() {
-            var container = document.getElementById('aspasia-messages');
-            aspasiaHistory.forEach(function(m) {
-                var div = document.createElement('div');
-                div.className = 'aspasia-msg ' + m.role;
-                div.innerHTML = m.text;
-                container.appendChild(div);
+        function renderSentinelAlerts(feed) {
+            var alerts = feed && Array.isArray(feed.alerts) ? feed.alerts : [];
+            if (alerts.length === 0) {
+                sentinelState('No published security alerts.', 'Sem alertas de segurança publicados.');
+                return;
+            }
+            var container = document.getElementById('sentinel-alerts');
+            container.replaceChildren();
+            alerts.forEach(function(alert) {
+                var card = document.createElement('article');
+                card.className = 'sentinel-alert';
+                card.dataset.severity = ['critical', 'warning', 'info'].includes(alert.severity) ? alert.severity : 'info';
+                var title = document.createElement('h3');
+                title.textContent = String(alert.title || 'Security alert').slice(0, 160);
+                var message = document.createElement('p');
+                message.textContent = String(alert.message || '').slice(0, 6000);
+                var timestamp = document.createElement('time');
+                var published = new Date(alert.published_at);
+                timestamp.dateTime = isNaN(published.getTime()) ? '' : published.toISOString();
+                timestamp.textContent = isNaN(published.getTime()) ? '' : published.toLocaleString();
+                card.append(title, message, timestamp);
+                container.appendChild(card);
             });
-        })();
+        }
+
+        function loadSentinelAlerts() {
+            if (!sentinelLoaded) sentinelState('Loading security alerts…', 'A carregar alertas de segurança…');
+            fetch(sentinelFeedUrl, { cache: 'no-store' })
+                .then(function(response) {
+                    if (!response.ok) throw new Error('feed unavailable');
+                    return response.json();
+                })
+                .then(function(feed) {
+                    sentinelLoaded = true;
+                    renderSentinelAlerts(feed);
+                })
+                .catch(function() {
+                    sentinelState('Alerts are temporarily unavailable.', 'Os alertas estão temporariamente indisponíveis.');
+                });
+        }
+
+        setInterval(function() {
+            if (sentinelOpen) loadSentinelAlerts();
+        }, 300000);
     </script>
 
     <!-- SCRIPTS -->
@@ -892,8 +895,6 @@
             else { document.body.classList.remove('lang-pt'); document.documentElement.lang = 'en'; }
             document.getElementById('btnEN').classList.toggle('active', lang === 'en');
             document.getElementById('btnPT').classList.toggle('active', lang === 'pt');
-            var aspInput = document.getElementById('aspasia-input');
-            if (aspInput) aspInput.placeholder = aspInput.getAttribute('data-placeholder-' + lang) || aspInput.placeholder;
             document.querySelectorAll('.reveal').forEach(function(el) {
                 if (el.getBoundingClientRect().top < window.innerHeight - 50) el.classList.add('visible');
             });
@@ -997,7 +998,8 @@
     // Restore session or show gate
     (function() {
         try {
-            if (sessionStorage.getItem('bash_auth') === 'ok') {
+            var localPreview = ['localhost', '127.0.0.1'].includes(location.hostname);
+            if (localPreview || sessionStorage.getItem('bash_auth') === 'ok') {
                 document.getElementById('bash-gate').style.display = 'none';
                 document.getElementById('bash-site').style.display = 'block';
             }
