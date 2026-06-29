@@ -22,6 +22,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          # repository_dispatch events capture the branch SHA when queued.
+          # Explicitly fetch main when this serialized job actually starts so
+          # alert bursts do not all attempt to push from the same stale parent.
+          ref: main
+          fetch-depth: 0
 
       - name: Test alert contract
         run: python3 -m unittest discover -s .github/scripts -p 'test_*.py'
