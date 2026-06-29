@@ -1,7 +1,15 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-29T17:15:46+00:00",
+  "updated_at": "2026-06-29T17:16:19+00:00",
   "alerts": [
+    {
+      "id": "hivesec-6a09129db0b3b30259848841",
+      "title": "HiveSec Sentinel — Atlas Menu",
+      "message": "• Exposição reportada por hibp-global associada a atlasmenu.net.\n• Contas/registos potencialmente afetados: 63 926.\n• Alterar imediatamente a credencial afetada por uma única e aleatória.\n• Revogar sessões/tokens ativos e ativar MFA ou passkey.\n• Verificar reutilização da mesma credencial noutros serviços.",
+      "severity": "critical",
+      "source": "HiveSec Sentinel",
+      "published_at": "2026-06-29T17:16:07+00:00"
+    },
     {
       "id": "hivesec-57e13d3b0fc9cfe4d268e729",
       "title": "HiveSec Sentinel — Edmunds",
