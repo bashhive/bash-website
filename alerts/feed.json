@@ -1,7 +1,15 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-29T17:26:53+00:00",
+  "updated_at": "2026-06-29T21:04:27+00:00",
   "alerts": [
+    {
+      "id": "hivesec-b9f0d97342917286a6bd7b43",
+      "title": "HiveSec Sentinel — June 2026 Stealer Logs",
+      "message": "• Exposição reportada por hibp-global associada a None.\n• Contas/registos potencialmente afetados: 56 278 397.\n• Alterar imediatamente a credencial afetada por uma única e aleatória.\n• Revogar sessões/tokens ativos e ativar MFA ou passkey.\n• Verificar reutilização da mesma credencial noutros serviços.",
+      "severity": "critical",
+      "source": "HiveSec Sentinel",
+      "published_at": "2026-06-29T21:04:16+00:00"
+    },
     {
       "id": "hivesec-ef6d213cffba1357cc1e234c",
       "title": "HiveSec Sentinel — Dragonica Lunaris",
