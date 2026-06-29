@@ -1,7 +1,15 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-29T17:16:19+00:00",
+  "updated_at": "2026-06-29T17:26:53+00:00",
   "alerts": [
+    {
+      "id": "hivesec-ef6d213cffba1357cc1e234c",
+      "title": "HiveSec Sentinel — Dragonica Lunaris",
+      "message": "• Exposição reportada por hibp-global associada a playdragonica.eu.\n• Contas/registos potencialmente afetados: 126 293.\n• Alterar imediatamente a credencial afetada por uma única e aleatória.\n• Revogar sessões/tokens ativos e ativar MFA ou passkey.\n• Verificar reutilização da mesma credencial noutros serviços.",
+      "severity": "critical",
+      "source": "HiveSec Sentinel",
+      "published_at": "2026-06-29T17:18:53+00:00"
+    },
     {
       "id": "hivesec-6a09129db0b3b30259848841",
       "title": "HiveSec Sentinel — Atlas Menu",
