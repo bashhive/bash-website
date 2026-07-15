@@ -3,14 +3,6 @@
   "updated_at": "2026-07-15T07:51:13+00:00",
   "alerts": [
     {
-      "id": "hivesec-permission-probe",
-      "title": "HiveSec Sentinel — permission probe",
-      "message": "permission probe",
-      "severity": "info",
-      "source": "HiveSec Sentinel",
-      "published_at": "2026-07-15T00:00:00+00:00"
-    },
-    {
       "id": "hivesec-b9f0d97342917286a6bd7b43",
       "title": "HiveSec Sentinel — June 2026 Stealer Logs",
       "message": "• Exposição reportada por hibp-global associada a None.\n• Contas/registos potencialmente afetados: 56 278 397.\n• Alterar imediatamente a credencial afetada por uma única e aleatória.\n• Revogar sessões/tokens ativos e ativar MFA ou passkey.\n• Verificar reutilização da mesma credencial noutros serviços.",
