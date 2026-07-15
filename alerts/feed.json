@@ -1,7 +1,15 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-29T21:04:27+00:00",
+  "updated_at": "2026-07-15T07:51:13+00:00",
   "alerts": [
+    {
+      "id": "hivesec-permission-probe",
+      "title": "HiveSec Sentinel — permission probe",
+      "message": "permission probe",
+      "severity": "info",
+      "source": "HiveSec Sentinel",
+      "published_at": "2026-07-15T00:00:00+00:00"
+    },
     {
       "id": "hivesec-b9f0d97342917286a6bd7b43",
       "title": "HiveSec Sentinel — June 2026 Stealer Logs",
