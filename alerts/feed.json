@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-15T07:58:08+00:00",
+  "updated_at": "2026-07-15T08:06:45+00:00",
   "alerts": [
     {
       "id": "hivesec-543a097f76360b4a46e3ee99",
       "title": "HiveSec Sentinel — GHSA-9hc2-hjx8-q6pv: TidGi Desktop Remote Code Execution via Malicious TiddlyWiki Repository Import — Tiddler Startup Mo",
-      "message": "• GHSA-9hc2-hjx8-q6pv: TidGi Desktop Remote Code Execution via Malicious TiddlyWiki Repository Import — Tiddler Startup Module Auto-Execution — https://github.com/advisories/GHSA-9hc2-hjx8-q6pv\n• CVE-2026-54052: n8n-MCP: Cross-tenant access to workflow version backups in multi-tenant HTTP deployments — https://github.com/advisories/GHSA-j6r7-6fhx-77wx\n• CVE-2026-56155: Microsoft Active Directory Federation Services Insufficient Granularity of Access Control Vulnerability — https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-56155",
+      "message": "**ALERTA DE SEGURANÇA: VULNERABILIDADES CRÍTICAS EM INFRAESTRUTURAS DE COLABORAÇÃO E IDENTIDADE**\n\n**Situação**\nO radar de inteligência de segurança detetou, na data de 2026-07-15, a publicação de múltiplas vulnerabilidades críticas em ecossistemas de software amplamente utilizados. Entre as ameaças identificadas, destacam-se falhas de execução remota de código (RCE) em ferramentas de gestão de conhecimento, problemas de isolamento de dados em plataformas de automação de fluxos de trabalho e falhas graves de controlo de acesso em infraestruturas de identidade corporativa.\n\n**Impacto**\nA exposição destes vetores de ataque pode resultar em compromissos severos da confidencialidade, integridade e disponibilidade dos ativos digitais. Especificamente:\n*   **Execução de Código:** A exploração de falhas em repositórios de conhecimento pode permitir a execução de código malicioso no ambiente do utilizador.\n*   **Vazamento de Dados:** Em ambientes multi-inquilino, a falta de isolamento adequado permite a leitura e destruição de backups de fluxos de trabalho, expondo credenciais e definições de nós sensíveis.\n*   **Elevação de Privilégios:** Falhas em serviços de federação e partilha de documentos podem permitir a um atacante não autorizado elevar privilégios local ou remotamente, comprometendo a segurança da rede inteira.\n\n**Ações Recomendadas**\n*   **Avaliação de Risco:** Identifique imediatamente se os seus ativos utilizam as versões afetadas das ferramentas mencionadas (TidGi, n8n, Microsoft AD FS, SharePoint ou Nexus Repository Manager).\n*   **Aplicação de Mitigações:** Aplique as correções de segurança conforme instruções dos fabricantes, priorizando os patches que eliminam a execução remota de código e a elevação de privilégios.\n*   **Conformidade Regulatória:** Para sistemas Microsoft afetados, garanta o cumprimento estrito das diretrizes da CISA (BOD 26-04) e dos requisitos de triagem forense, considerando a suspensão do serviço se as mitigações não estiverem disponíveis.\n*   **Monitorização:** Aumente a vigilância sobre tentativas de acesso não autorizado e anomalias de comportamento nas suas redes, especialmente em servidores de ficheiros e repositórios de código.",
       "severity": "critical",
       "source": "HiveSec Sentinel",
-      "published_at": "2026-07-15T07:57:58+00:00"
+      "published_at": "2026-07-15T08:06:35+00:00"
     },
     {
       "id": "hivesec-b9f0d97342917286a6bd7b43",
