@@ -1,7 +1,15 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-15T07:51:13+00:00",
+  "updated_at": "2026-07-15T07:58:08+00:00",
   "alerts": [
+    {
+      "id": "hivesec-543a097f76360b4a46e3ee99",
+      "title": "HiveSec Sentinel — GHSA-9hc2-hjx8-q6pv: TidGi Desktop Remote Code Execution via Malicious TiddlyWiki Repository Import — Tiddler Startup Mo",
+      "message": "• GHSA-9hc2-hjx8-q6pv: TidGi Desktop Remote Code Execution via Malicious TiddlyWiki Repository Import — Tiddler Startup Module Auto-Execution — https://github.com/advisories/GHSA-9hc2-hjx8-q6pv\n• CVE-2026-54052: n8n-MCP: Cross-tenant access to workflow version backups in multi-tenant HTTP deployments — https://github.com/advisories/GHSA-j6r7-6fhx-77wx\n• CVE-2026-56155: Microsoft Active Directory Federation Services Insufficient Granularity of Access Control Vulnerability — https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-56155",
+      "severity": "critical",
+      "source": "HiveSec Sentinel",
+      "published_at": "2026-07-15T07:57:58+00:00"
+    },
     {
       "id": "hivesec-b9f0d97342917286a6bd7b43",
       "title": "HiveSec Sentinel — June 2026 Stealer Logs",
