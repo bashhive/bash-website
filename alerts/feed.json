@@ -1,7 +1,15 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-15T08:06:45+00:00",
+  "updated_at": "2026-07-15T15:49:35+00:00",
   "alerts": [
+    {
+      "id": "hivesec-b3cf65e272c43eb87629c586",
+      "title": "HiveSec Sentinel — GHSA-9hc2-hjx8-q6pv: TidGi Desktop Remote Code Execution via Malicious TiddlyWiki Repository Import — Tiddler Startup Mo",
+      "message": "**ALERTA DE SEGURANÇA: VULNERABILIDADES CRÍTICAS EM ECOSISTEMA MICROSOFT E FERRAMENTAS DE AUTOMAÇÃO**\n\n**Situação**\nO radar de inteligência de segurança detetou, na data de 2026-07-15, a publicação de múltiplas vulnerabilidades críticas em serviços Microsoft e ferramentas de automação de fluxo de trabalho. Entre as ameaças identificadas, destacam-se falhas de execução remota de código (RCE) em aplicações de desktop e brechas severas de controlo de acesso em infraestruturas de identidade e colaboração.\n\n**Impacto**\n*   **Execução Remota de Código:** A versão 0.13.0 do TidGi Desktop permite a execução remota de código através da importação de repositórios Git maliciosos, explorando a execução automática de módulos JavaScript.\n*   **Vazamento de Dados e Privilegios:** Vulnerabilidades em serviços Microsoft Active Directory Federation Services e SharePoint Server permitem a elevação de privilégios e acesso não autorizado a funções críticas, comprometendo a confidencialidade e integridade dos dados.\n*   **Exposição de Credenciais:** Em ambientes multi-inquilino de ferramentas de automação (n8n-MCP), falhas de isolamento permitem a leitura de backups de fluxos de trabalho contendo referências a credenciais e cabeçalhos de autorização de outros inquilinos.\n*   **Injeção de Comandos:** O Microsoft Copilot apresenta vulnerabilidade a injeção de comandos, permitindo a execução de código remoto por atacantes não autorizados.\n\n**Ações Recomendadas**\n*   **Aplicação Imediata de Correções:** Priorize a aplicação de atualizações de segurança para os serviços Microsoft afetados (AD FS, SharePoint, Copilot) e para a versão do TidGi Desktop, seguindo as diretrizes do fabricante.\n*   **Mitigação de Risco CISA:** Para os ativos classificados como \"Exploração Conhecida\", aplique as mitigações conforme instruções do fabricante e cumpra estritamente as diretrizes do BOD 26-04 da CISA, avaliando a exposição à internet de cada ativo.\n*   **Revisão de Configurações:** Verifique as configurações de isolamento em ambientes multi-inquilino de ferramentas de automação e restrinja o acesso a backups de versões de fluxos de trabalho.\n*   **Monitorização Contínua:** Aumente a vigilância sobre tentativas de exploração de injeção de comandos em interfaces de IA e acesso não autorizado a serviços de identidade federada.",
+      "severity": "critical",
+      "source": "HiveSec Sentinel",
+      "published_at": "2026-07-15T15:49:22+00:00"
+    },
     {
       "id": "hivesec-543a097f76360b4a46e3ee99",
       "title": "HiveSec Sentinel — GHSA-9hc2-hjx8-q6pv: TidGi Desktop Remote Code Execution via Malicious TiddlyWiki Repository Import — Tiddler Startup Mo",
