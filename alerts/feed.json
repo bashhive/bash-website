@@ -1,7 +1,15 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-15T15:49:35+00:00",
+  "updated_at": "2026-07-16T00:00:31+00:00",
   "alerts": [
+    {
+      "id": "hivesec-95656be1ecb324781eb75bec",
+      "title": "HiveSec Sentinel — GHSA-9hc2-hjx8-q6pv: TidGi Desktop Remote Code Execution via Malicious TiddlyWiki Repository Import — Tiddler Startup Mo",
+      "message": "**ALERTA DE SEGURANÇA: VULNERABILIDADES CRÍTICAS EM ECOSISTEMAS DE AUTOMAÇÃO E MÚSICA**\n\n**Situação:**\nNo dia 16 de julho de 2026, foram divulgados múltiplos conselhos de segurança (GHSA e CVE) que afetam ferramentas populares de automação de fluxos de trabalho, gestão de música e interfaces de utilizador. As vulnerabilidades identificadas incluem execução remota de código (RCE) em repositórios Git maliciosos, falhas de isolamento entre inquilinos em servidores de automação e erros de permissão em tokens de autenticação.\n\n**Impacto:**\n*   **Execução de Código Remoto:** A aplicação TidGi Desktop permite a execução de código arbitrário através da importação de repositórios Git maliciosos, devido à execução automática de módulos JavaScript.\n*   **Vazamento de Dados e Integridade:** Em implantações multi-inquilino da ferramenta n8n-MCP, backups de fluxos de trabalho podem ser acessados ou destruídos por outros inquilinos, expondo credenciais e cabeçalhos de autorização.\n*   **RCE via Pesquisa:** A biblioteca django-haystack permite a execução de código ao processar resultados de pesquisa do Elasticsearch que contêm conteúdo controlado por um atacante.\n*   **Acesso Não Autorizado:** O cliente garminconnect cria ficheiros de tokens OAuth com permissões de leitura pública, permitindo a qualquer utilizador local no sistema aceder à conta do utilizador.\n*   **Ataques SSRF:** A aplicação Koel permite a um utilizador autenticado realizar ataques de Serviço de Rede Interna (SSRF) através da funcionalidade de estações de rádio, contornando proteções de URL.\n\n**Ações Recomendadas:**\n*   **Atualização Imediata:** Aplique as correções de segurança disponíveis para as versões afetadas de TidGi, n8n-MCP, django-haystack, garminconnect e Koel.\n*   **Revisão de Permissões:** Verifique e restrinja as permissões de ficheiro do sistema para qualquer aplicação que guarde tokens ou credenciais em disco.\n*   **Validação de Entradas:** Revise a lógica de validação de URLs e a deserialização de dados em componentes que interagem com motores de busca ou APIs externas.\n*   **Monitorização:** Aumente a vigilância sobre tentativas de importação de repositórios Git não autorizados e acesso a recursos de rede interna não previstos.",
+      "severity": "warning",
+      "source": "HiveSec Sentinel",
+      "published_at": "2026-07-16T00:00:19+00:00"
+    },
     {
       "id": "hivesec-b3cf65e272c43eb87629c586",
       "title": "HiveSec Sentinel — GHSA-9hc2-hjx8-q6pv: TidGi Desktop Remote Code Execution via Malicious TiddlyWiki Repository Import — Tiddler Startup Mo",
