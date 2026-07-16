@@ -1,7 +1,15 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-16T00:00:31+00:00",
+  "updated_at": "2026-07-16T06:32:07+00:00",
   "alerts": [
+    {
+      "id": "hivesec-9695a786da20886df054fa62",
+      "title": "HiveSec Sentinel — CVE-2026-15409: A Server-side request forgery (SSRF) vulnerability has been identified in the SMA1000 Appliance Work Pla",
+      "message": "• CVE-2026-15409: A Server-side request forgery (SSRF) vulnerability has been identified in the SMA1000 Appliance Work Place interface. A remote unauthenticated attacker could potentially cause the — https://nvd.nist.gov/vuln/detail/CVE-2026-15409\n• GHSA-9hc2-hjx8-q6pv: TidGi Desktop Remote Code Execution via Malicious TiddlyWiki Repository Import — Tiddler Startup Module Auto-Execution — https://github.com/advisories/GHSA-9hc2-hjx8-q6pv\n• CVE-2026-54052: n8n-MCP: Cross-tenant access to workflow version backups in multi-tenant HTTP deployments — https://github.com/advisories/GHSA-j6r7-6fhx-77wx",
+      "severity": "critical",
+      "source": "HiveSec Sentinel",
+      "published_at": "2026-07-16T06:31:56+00:00"
+    },
     {
       "id": "hivesec-95656be1ecb324781eb75bec",
       "title": "HiveSec Sentinel — GHSA-9hc2-hjx8-q6pv: TidGi Desktop Remote Code Execution via Malicious TiddlyWiki Repository Import — Tiddler Startup Mo",
