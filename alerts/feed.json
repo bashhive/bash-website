@@ -1,7 +1,15 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-17T06:32:10+00:00",
+  "updated_at": "2026-07-18T08:43:21+00:00",
   "alerts": [
+    {
+      "id": "hivesec-e2afecded63f67e977bc5aa1",
+      "title": "HiveSec Sentinel — CVE-2026-44182: Jupyter Enterprise Gateway launches remote Jupyter Notebook kernels across distributed clusters like Apa",
+      "message": "• CVE-2026-44182: Jupyter Enterprise Gateway launches remote Jupyter Notebook kernels across distributed clusters like Apache Spark, Kubernetes, and Docker Swarm. In versions prior to 3.3.0, the ser — https://nvd.nist.gov/vuln/detail/CVE-2026-44182\n• CVE-2026-44181: Jupyter Enterprise Gateway launches remote Jupyter Notebook kernels across distributed clusters like Apache Spark, Kubernetes, and Docker Swarm. In versions 2.0.0rc2 and above, pri — https://nvd.nist.gov/vuln/detail/CVE-2026-44181\n• CVE-2026-44180: Jupyter Enterprise Gateway launches remote Jupyter Notebook kernels across distributed clusters like Apache Spark, Kubernetes, and Docker Swarm. Versions 2.0.0rc1 and above prior t — https://nvd.nist.gov/vuln/detail/CVE-2026-44180",
+      "severity": "warning",
+      "source": "HiveSec Sentinel",
+      "published_at": "2026-07-18T08:43:09+00:00"
+    },
     {
       "id": "hivesec-7a48cadee349a43253c13939",
       "title": "HiveSec Sentinel — CVE-2026-45695: Kopia is a cross-platform backup tool for Windows, macOS, and Linux with fast incremental backups, clien",
