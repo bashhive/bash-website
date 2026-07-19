@@ -1,7 +1,15 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-18T08:43:21+00:00",
+  "updated_at": "2026-07-19T08:25:17+00:00",
   "alerts": [
+    {
+      "id": "hivesec-e5014b804f2bf1757277f935",
+      "title": "HiveSec Sentinel — CVE-2026-9323: The urwid web display backend (urwid/display/web.py) generates web session identifiers (urwid_id) in Scre",
+      "message": "• CVE-2026-9323: The urwid web display backend (urwid/display/web.py) generates web session identifiers (urwid_id) in Screen.start() by concatenating two random.randrange(10**9) calls that use Pyth — https://nvd.nist.gov/vuln/detail/CVE-2026-9323\n• CVE-2026-9147: uproot dynamically generates Python class source code from ROOT TStreamerInfo records in a file and compiles it at runtime. Some file-controlled streamer metadata fields (for examp — https://nvd.nist.gov/vuln/detail/CVE-2026-9147\n• CVE-2026-8481: IBM Langflow OSS 1.0.0 through 1.10.0 contain a critical remote code execution vulnerability in the code validation API endpoint. The POST /api/v1/validate/code endpoint accepts us — https://nvd.nist.gov/vuln/detail/CVE-2026-8481",
+      "severity": "warning",
+      "source": "HiveSec Sentinel",
+      "published_at": "2026-07-19T08:25:04+00:00"
+    },
     {
       "id": "hivesec-e2afecded63f67e977bc5aa1",
       "title": "HiveSec Sentinel — CVE-2026-44182: Jupyter Enterprise Gateway launches remote Jupyter Notebook kernels across distributed clusters like Apa",
