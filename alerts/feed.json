@@ -1,7 +1,15 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-21T06:30:20+00:00",
+  "updated_at": "2026-07-22T06:31:39+00:00",
   "alerts": [
+    {
+      "id": "hivesec-a20e40092fe42b192ebb8464",
+      "title": "HiveSec Sentinel — CVE-2026-20896: Gitea Docker image: `REVERSE_PROXY_TRUSTED_PROXIES = *` default lets any source IP impersonate any user",
+      "message": "• CVE-2026-20896: Gitea Docker image: `REVERSE_PROXY_TRUSTED_PROXIES = *` default lets any source IP impersonate any user via `X-WEBAUTH-USER` — https://github.com/advisories/GHSA-f75j-4cw6-rmx4\n• CVE-2026-59891: Credential confusion in @sigstore/oci can leak registry credentials to an attacker-controlled registry — https://github.com/advisories/GHSA-pf56-329r-95rw\n• CVE-2026-47300: Microsoft Security Advisory CVE-2026-47300 – .NET Elevation of Privilege Vulnerability — https://github.com/advisories/GHSA-8prm-248r-h957",
+      "severity": "warning",
+      "source": "HiveSec Sentinel",
+      "published_at": "2026-07-22T06:31:28+00:00"
+    },
     {
       "id": "hivesec-66ee46cff3836eda48255c21",
       "title": "HiveSec Sentinel — CVE-2026-61740: LightRAG is Vulnerable to Authentication Bypass: hardcoded DEFAULT_TOKEN_SECRET and public /auth-status",
