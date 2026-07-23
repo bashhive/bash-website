@@ -1,7 +1,15 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-22T06:31:39+00:00",
+  "updated_at": "2026-07-23T06:30:21+00:00",
   "alerts": [
+    {
+      "id": "hivesec-1b2a00b686e7b6a302c365de",
+      "title": "HiveSec Sentinel — CVE-2026-50522: Microsoft SharePoint Deserialization of Untrusted Data Vulnerability",
+      "message": "• CVE-2026-50522: Microsoft SharePoint Deserialization of Untrusted Data Vulnerability — https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-50522\n• GHSA-xwx6-jjhv-84p8: n8n: Prototype Pollution via Dot-Notation Field Names Leads To Instance-Wide Denial of Service — https://github.com/advisories/GHSA-xwx6-jjhv-84p8\n• GHSA-xmc9-4f2h-jf9c: n8n: Edit Image Node Format Injection Allows Arbitrary File Write — https://github.com/advisories/GHSA-xmc9-4f2h-jf9c",
+      "severity": "critical",
+      "source": "HiveSec Sentinel",
+      "published_at": "2026-07-23T06:30:09+00:00"
+    },
     {
       "id": "hivesec-a20e40092fe42b192ebb8464",
       "title": "HiveSec Sentinel — CVE-2026-20896: Gitea Docker image: `REVERSE_PROXY_TRUSTED_PROXIES = *` default lets any source IP impersonate any user",
