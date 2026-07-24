@@ -8,6 +8,7 @@ async function publicFeed(request, env) {
     if (!response.ok) throw new Error(`GitHub feed returned ${response.status}`);
     return new Response(response.body, {
       headers: {
+        "access-control-allow-origin": "*",
         "cache-control": "public, max-age=300",
         "content-type": "application/json; charset=utf-8",
       },
