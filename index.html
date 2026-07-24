@@ -712,17 +712,15 @@
                 </svg>
                 <span>HiveSec</span>
             </div>
-            <p class="footer-note"><strong style="color:var(--text-primary)">HiveSec</strong> — digital bodyguard. <strong class="footer-child" style="color:var(--text-primary)">BashHive</strong> born from BASH.</p>
-            <p class="footer-copy">© <span id="footer-year"></span> <span class="footer-child">BashHive</span> — from bash.pt · AI-first by design</p>
+            <p class="footer-note"><strong id="footer-lead" style="color:var(--text-primary)">BASH.PT</strong> <span id="footer-message">— a prática original. Hoje, BashHive.</span></p>
+            <p class="footer-copy" id="footer-copy">© <span id="footer-year"></span> BASH.PT · a origem da BashHive · AI-first by design</p>
         </div>
     </footer>
     <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
 
     <!-- HIVESEC SENTINEL — READ-ONLY SECURITY ALERTS -->
     <div id="sentinel-widget">
-        <button id="sentinel-toggle" type="button" onclick="toggleSentinel()" aria-label="Open security alerts" aria-expanded="false">
-            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-        </button>
+        <button id="sentinel-toggle" type="button" onclick="toggleSentinel()" aria-label="Open HiveSec Sentinel alerts" aria-expanded="false"><span class="sentinel-mark" aria-hidden="true"></span></button>
         <section id="sentinel-panel" hidden aria-live="polite">
             <header id="sentinel-header">
                 <div>
@@ -747,23 +745,26 @@
         #sentinel-toggle {
             position: fixed; bottom: 24px; right: 24px; z-index: 9999;
             width: 56px; height: 56px; border: 0; border-radius: 50%;
-            background: linear-gradient(135deg, #4A5DA6, #00D4AA);
+            border: 1px solid rgba(190,207,255,.66); background: radial-gradient(circle at 33% 26%,#253A69 0,#152442 48%,#0B1324 100%);
             color: #fff; display: flex; align-items: center; justify-content: center;
-            cursor: pointer; box-shadow: 0 4px 20px rgba(0,212,170,0.3);
+            cursor: pointer; box-shadow: 0 8px 30px rgba(67,91,174,.45), inset 0 1px 0 rgba(255,255,255,.18);
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        #sentinel-toggle:hover { transform: scale(1.08); box-shadow: 0 6px 30px rgba(0,212,170,0.45); }
+        #sentinel-toggle:hover { transform: scale(1.08); box-shadow: 0 11px 38px rgba(88,115,214,.58), inset 0 1px 0 rgba(255,255,255,.22); }
+        .sentinel-mark { position: relative; display: block; width: 30px; height: 30px; filter: drop-shadow(0 0 7px rgba(0,212,170,.34)); }
+        .sentinel-mark::before { content: ''; position: absolute; inset: 1px; border: 2px solid #AAB9F1; clip-path: polygon(25% 3%,75% 3%,100% 50%,75% 97%,25% 97%,0 50%); }
+        .sentinel-mark::after { content: '›_'; position: absolute; inset: 0; display: grid; place-items: center; transform: translate(-1px,-1px); color: #00D4AA; font: 800 18px/1 'DM Mono', monospace; letter-spacing: -5px; }
         #sentinel-toggle:focus-visible, #sentinel-close:focus-visible, #sentinel-footer a:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
         #sentinel-panel {
             position: fixed; bottom: 90px; right: 24px; z-index: 9999;
-            width: min(410px, calc(100vw - 32px)); max-height: min(610px, calc(100vh - 120px));
+            width: min(430px, calc(100vw - 32px)); max-height: min(620px, calc(100vh - 120px));
             border-radius: 16px; overflow: hidden; background: #0A0E1A;
             border: 1px solid #1E2540; box-shadow: 0 20px 60px rgba(0,0,0,0.5);
             font-family: 'Inter', -apple-system, sans-serif;
         }
         #sentinel-panel:not([hidden]) { display: flex; flex-direction: column; }
         #sentinel-header {
-            background: linear-gradient(135deg, #4A5DA6, #00D4AA);
+            background: linear-gradient(135deg, #334B86, #596FC6);
             color: #fff; padding: 14px 16px; display: flex;
             justify-content: space-between; align-items: flex-start; gap: 1rem;
         }
@@ -790,7 +791,14 @@
             border-radius: 10px; padding: 12px;
         }
         .sentinel-alert[data-severity="critical"] { border-left-color: #FF6B6B; }
-        .sentinel-alert[data-severity="warning"] { border-left-color: #F4C95D; }
+        .sentinel-alert[data-severity="high"], .sentinel-alert[data-severity="warning"] { border-left-color: #F4C95D; }
+        .sentinel-alert[data-severity="medium"] { border-left-color: #55B7DD; }
+        .sentinel-alert[data-severity="low"] { border-left-color: #6ED1AD; }
+        .sentinel-alert .sentinel-severity { color: #AAB9F1; font: 600 0.67rem/1 'DM Mono', monospace; letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 7px; }
+        .sentinel-alert[data-severity="critical"] .sentinel-severity { color: #FF9B9B; }
+        .sentinel-alert[data-severity="high"] .sentinel-severity, .sentinel-alert[data-severity="warning"] .sentinel-severity { color: #F4C95D; }
+        .sentinel-alert[data-severity="medium"] .sentinel-severity { color: #79C8E7; }
+        .sentinel-alert[data-severity="low"] .sentinel-severity { color: #86E0C0; }
         .sentinel-alert h3 { color: #F0F2FF; font-size: 0.9rem; line-height: 1.35; margin: 0 0 7px; }
         .sentinel-alert p { color: #A9AFC8; font-size: 0.8rem; line-height: 1.48; margin: 0; white-space: pre-line; overflow-wrap: anywhere; }
         .sentinel-alert time { color: #69718F; display: block; font-size: 0.7rem; margin-top: 9px; }
@@ -813,7 +821,7 @@
         var sentinelLoaded = false;
         var sentinelFeedUrl = ['localhost', '127.0.0.1'].includes(location.hostname)
             ? 'alerts/feed.json'
-            : 'https://bash.pt/alerts/feed.json';
+            : 'https://hivesec.eu/alerts/feed.json';
 
         function toggleSentinel() {
             sentinelOpen = !sentinelOpen;
@@ -850,21 +858,35 @@
             }
             var container = document.getElementById('sentinel-alerts');
             container.replaceChildren();
-            alerts.forEach(function(alert) {
+            alerts.slice(0, 6).forEach(function(alert) {
                 var card = document.createElement('article');
                 card.className = 'sentinel-alert';
-                card.dataset.severity = ['critical', 'warning', 'info'].includes(alert.severity) ? alert.severity : 'info';
+                var severity = String(alert.severity || 'info').toLowerCase();
+                card.dataset.severity = ['critical', 'high', 'medium', 'low', 'warning', 'info'].includes(severity) ? severity : 'info';
+                var label = document.createElement('div');
+                label.className = 'sentinel-severity';
+                label.textContent = card.dataset.severity;
                 var title = document.createElement('h3');
                 title.textContent = String(alert.title || 'Security alert').slice(0, 160);
                 var message = document.createElement('p');
-                message.textContent = String(alert.message || '').slice(0, 6000);
+                message.textContent = String(alert.summary || alert.message || '').slice(0, 6000);
                 var timestamp = document.createElement('time');
                 var published = new Date(alert.published_at);
                 timestamp.dateTime = isNaN(published.getTime()) ? '' : published.toISOString();
-                timestamp.textContent = isNaN(published.getTime()) ? '' : published.toLocaleString();
-                card.append(title, message, timestamp);
+                timestamp.textContent = isNaN(published.getTime()) ? '' : formatSentinelTimestamp(published);
+                card.append(label, title, message, timestamp);
                 container.appendChild(card);
             });
+        }
+
+        function formatSentinelTimestamp(date) {
+            var lang = document.body.classList.contains('lang-pt') ? 'pt-PT' : 'en-GB';
+            var absolute = new Intl.DateTimeFormat(lang, { timeZone: 'Europe/Lisbon', day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', timeZoneName: 'short' }).format(date);
+            var delta = Math.round((date.getTime() - Date.now()) / 60000);
+            var unit = Math.abs(delta) < 60 ? 'minute' : Math.abs(delta) < 1440 ? 'hour' : 'day';
+            var amount = unit === 'minute' ? delta : unit === 'hour' ? Math.round(delta / 60) : Math.round(delta / 1440);
+            var relative = new Intl.RelativeTimeFormat(lang, { numeric: 'auto' }).format(amount, unit);
+            return absolute + ' · ' + relative;
         }
 
         function loadSentinelAlerts() {
@@ -926,6 +948,19 @@
             var a = document.getElementById('navLogo');  if (a) a.setAttribute('aria-label', BRAND.aria);
             var g = document.getElementById('gateBrand'); if (g) g.innerHTML = BRAND.gate;
             document.querySelectorAll('.footer-child').forEach(function (el) { el.textContent = BRAND.child; });
+            var footerLead = document.getElementById('footer-lead');
+            var footerMessage = document.getElementById('footer-message');
+            var footerCopy = document.getElementById('footer-copy');
+            if (BRAND.gov) {
+                if (footerLead) footerLead.textContent = 'HiveSec';
+                if (footerMessage) footerMessage.textContent = '— governance and assurance. Delivered by BashHive.';
+                if (footerCopy) footerCopy.innerHTML = '© <span id="footer-year"></span> HiveSec · governance and assurance · from bash.pt';
+            } else if (BRAND.child === 'BashHive') {
+                if (footerLead) footerLead.textContent = 'BashHive';
+                if (footerMessage) footerMessage.textContent = '— practical security operations. From BASH.';
+                if (footerCopy) footerCopy.innerHTML = '© <span id="footer-year"></span> BashHive · from bash.pt · AI-first by design';
+            }
+            var footerYear = document.getElementById('footer-year'); if (footerYear) footerYear.textContent = new Date().getFullYear();
             // Governance face (hivesec.eu): swap hero copy to the NIS2/DORA/board narrative.
             document.body.classList.toggle('brand-hivesec', !!BRAND.gov);
         })();
