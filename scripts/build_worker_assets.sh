@@ -7,6 +7,7 @@ mkdir -p dist
 
 cp -R \
   index.html \
+  sentinel.html \
   robots.txt \
   sitemap.xml \
   favicon.ico \
