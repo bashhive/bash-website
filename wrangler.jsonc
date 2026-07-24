@@ -1,19 +1,7 @@
 {
-  // Cloudflare Worker (static assets only) for serving the BASH/BashHive site.
-  // Serves bashhive.eu from this same repo/build.
-  // bash.pt currently has externally managed GitHub Pages DNS records.
-  // hivesec.eu also has externally managed DNS/redirect state.
-  // Remove those records/rules in Cloudflare before adding either domain here.
-  //
-  // The site is domain-aware: index.html switches top logo / language /
-  // footer child brand by location.hostname. So the SAME files serve all
-  // three front-doors. The custom_domain routes below attach the public domains to
-  // this Worker on `wrangler deploy`.
-  //
-  // IMPORTANT (manual, Cloudflare dashboard): delete the existing
-  // hivesec.eu Redirect Rule (301 -> bash.pt). Redirect Rules run before the
-  // Worker, so while it exists hivesec.eu will keep redirecting and never
-  // reach these routes.
+  // This Worker is the BashHive site. hivesec.eu is attached separately as a
+  // zone-level Worker Route so it can use its governance presentation.
+  // bash.pt intentionally remains on its established GitHub Pages site.
   "name": "bash-site",
   "compatibility_date": "2026-06-05",
   "assets": {

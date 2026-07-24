@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 169 168" role="img" aria-label="HiveSec">
+  <g fill="none" stroke="#AAB9F1" stroke-width="8" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M96,44 L73,83.8 L27,83.8 L4,44 L27,4.2 L73,4.2 Z"/>
+    <path d="M96,123.6 L73,163.4 L27,163.4 L4,123.6 L27,83.8 L73,83.8 Z"/>
+    <path d="M165,83.8 L142,123.6 L96,123.6 L73,83.8 L96,44 L142,44 Z"/>
+  </g>
+</svg>
