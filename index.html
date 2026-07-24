@@ -712,15 +712,15 @@
                 </svg>
                 <span>HiveSec</span>
             </div>
-            <p class="footer-note"><strong id="footer-lead" style="color:var(--text-primary)">BASH.PT</strong> <span id="footer-message">— a prática original. Hoje, BashHive.</span></p>
-            <p class="footer-copy" id="footer-copy">© <span id="footer-year"></span> BASH.PT · a origem da BashHive · AI-first by design</p>
+            <p class="footer-note"><strong style="color:var(--text-primary)">HiveSec</strong> is the governance practice. Delivery is led by <strong style="color:var(--text-primary)">BashHive</strong>.</p>
+            <p class="footer-copy" id="footer-copy">© 2026 · AI-first by design</p>
         </div>
     </footer>
     <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
 
     <!-- HIVESEC SENTINEL — READ-ONLY SECURITY ALERTS -->
     <div id="sentinel-widget">
-        <button id="sentinel-toggle" type="button" onclick="toggleSentinel()" aria-label="Open HiveSec Sentinel alerts" aria-expanded="false"><span class="sentinel-mark" aria-hidden="true"></span></button>
+        <button id="sentinel-toggle" type="button" onclick="toggleSentinel()" aria-label="Open HiveSec Sentinel alerts" aria-expanded="false"><svg class="sentinel-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></button>
         <section id="sentinel-panel" hidden aria-live="polite">
             <header id="sentinel-header">
                 <div>
@@ -745,15 +745,13 @@
         #sentinel-toggle {
             position: fixed; bottom: 24px; right: 24px; z-index: 9999;
             width: 56px; height: 56px; border: 0; border-radius: 50%;
-            border: 1px solid rgba(190,207,255,.66); background: radial-gradient(circle at 33% 26%,#253A69 0,#152442 48%,#0B1324 100%);
+            border: 3px solid #F4F7FF; background: linear-gradient(135deg,#4A78B6,#00CFA9);
             color: #fff; display: flex; align-items: center; justify-content: center;
-            cursor: pointer; box-shadow: 0 8px 30px rgba(67,91,174,.45), inset 0 1px 0 rgba(255,255,255,.18);
+            cursor: pointer; box-shadow: 0 8px 30px rgba(0,212,170,.34), inset 0 0 0 4px rgba(4,14,30,.23);
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        #sentinel-toggle:hover { transform: scale(1.08); box-shadow: 0 11px 38px rgba(88,115,214,.58), inset 0 1px 0 rgba(255,255,255,.22); }
-        .sentinel-mark { position: relative; display: block; width: 30px; height: 30px; filter: drop-shadow(0 0 7px rgba(0,212,170,.34)); }
-        .sentinel-mark::before { content: ''; position: absolute; inset: 1px; border: 2px solid #AAB9F1; clip-path: polygon(25% 3%,75% 3%,100% 50%,75% 97%,25% 97%,0 50%); }
-        .sentinel-mark::after { content: '›_'; position: absolute; inset: 0; display: grid; place-items: center; transform: translate(-1px,-1px); color: #00D4AA; font: 800 18px/1 'DM Mono', monospace; letter-spacing: -5px; }
+        #sentinel-toggle:hover { transform: scale(1.08); box-shadow: 0 11px 38px rgba(0,212,170,.48), inset 0 0 0 4px rgba(4,14,30,.16); }
+        .sentinel-mark { display: block; width: 27px; height: 27px; filter: drop-shadow(0 1px 1px rgba(4,14,30,.22)); }
         #sentinel-toggle:focus-visible, #sentinel-close:focus-visible, #sentinel-footer a:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
         #sentinel-panel {
             position: fixed; bottom: 90px; right: 24px; z-index: 9999;
@@ -947,20 +945,6 @@
             var n = document.getElementById('navBrand'); if (n) n.innerHTML = BRAND.nav;
             var a = document.getElementById('navLogo');  if (a) a.setAttribute('aria-label', BRAND.aria);
             var g = document.getElementById('gateBrand'); if (g) g.innerHTML = BRAND.gate;
-            document.querySelectorAll('.footer-child').forEach(function (el) { el.textContent = BRAND.child; });
-            var footerLead = document.getElementById('footer-lead');
-            var footerMessage = document.getElementById('footer-message');
-            var footerCopy = document.getElementById('footer-copy');
-            if (BRAND.gov) {
-                if (footerLead) footerLead.textContent = 'HiveSec';
-                if (footerMessage) footerMessage.textContent = '— governance and assurance. Delivered by BashHive.';
-                if (footerCopy) footerCopy.innerHTML = '© <span id="footer-year"></span> HiveSec · governance and assurance · from bash.pt';
-            } else if (BRAND.child === 'BashHive') {
-                if (footerLead) footerLead.textContent = 'BashHive';
-                if (footerMessage) footerMessage.textContent = '— practical security operations. From BASH.';
-                if (footerCopy) footerCopy.innerHTML = '© <span id="footer-year"></span> BashHive · from bash.pt · AI-first by design';
-            }
-            var footerYear = document.getElementById('footer-year'); if (footerYear) footerYear.textContent = new Date().getFullYear();
             // Governance face (hivesec.eu): swap hero copy to the NIS2/DORA/board narrative.
             document.body.classList.toggle('brand-hivesec', !!BRAND.gov);
         })();
