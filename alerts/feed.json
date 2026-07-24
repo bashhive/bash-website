@@ -1,7 +1,87 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-15T15:49:35+00:00",
+  "updated_at": "2026-07-24T15:09:19+00:00",
   "alerts": [
+    {
+      "id": "hivesec-kev-cve-2021-27137",
+      "title": "CISA KEV: DD-WRT Stack-Based Buffer Overflow Vulnerability",
+      "message": "CISA has added CVE-2021-27137 to its Known Exploited Vulnerabilities catalog. Affected: DD-WRT DD-WRT. Recommended action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n\nSource: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+      "severity": "critical",
+      "source": "HiveSec Sentinel",
+      "published_at": "2026-07-21T00:00:00+00:00"
+    },
+    {
+      "id": "hivesec-kev-cve-2026-16232",
+      "title": "CISA KEV: Check Point SmartConsole Improper Authentication Vulnerability",
+      "message": "CISA has added CVE-2026-16232 to its Known Exploited Vulnerabilities catalog. Affected: Check Point SmartConsole. Recommended action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n\nSource: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+      "severity": "critical",
+      "source": "HiveSec Sentinel",
+      "published_at": "2026-07-22T00:00:00+00:00"
+    },
+    {
+      "id": "hivesec-1b2a00b686e7b6a302c365de",
+      "title": "HiveSec Sentinel — CVE-2026-50522: Microsoft SharePoint Deserialization of Untrusted Data Vulnerability",
+      "message": "• CVE-2026-50522: Microsoft SharePoint Deserialization of Untrusted Data Vulnerability — https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-50522\n• GHSA-xwx6-jjhv-84p8: n8n: Prototype Pollution via Dot-Notation Field Names Leads To Instance-Wide Denial of Service — https://github.com/advisories/GHSA-xwx6-jjhv-84p8\n• GHSA-xmc9-4f2h-jf9c: n8n: Edit Image Node Format Injection Allows Arbitrary File Write — https://github.com/advisories/GHSA-xmc9-4f2h-jf9c",
+      "severity": "critical",
+      "source": "HiveSec Sentinel",
+      "published_at": "2026-07-23T06:30:09+00:00"
+    },
+    {
+      "id": "hivesec-a20e40092fe42b192ebb8464",
+      "title": "HiveSec Sentinel — CVE-2026-20896: Gitea Docker image: `REVERSE_PROXY_TRUSTED_PROXIES = *` default lets any source IP impersonate any user",
+      "message": "• CVE-2026-20896: Gitea Docker image: `REVERSE_PROXY_TRUSTED_PROXIES = *` default lets any source IP impersonate any user via `X-WEBAUTH-USER` — https://github.com/advisories/GHSA-f75j-4cw6-rmx4\n• CVE-2026-59891: Credential confusion in @sigstore/oci can leak registry credentials to an attacker-controlled registry — https://github.com/advisories/GHSA-pf56-329r-95rw\n• CVE-2026-47300: Microsoft Security Advisory CVE-2026-47300 – .NET Elevation of Privilege Vulnerability — https://github.com/advisories/GHSA-8prm-248r-h957",
+      "severity": "warning",
+      "source": "HiveSec Sentinel",
+      "published_at": "2026-07-22T06:31:28+00:00"
+    },
+    {
+      "id": "hivesec-66ee46cff3836eda48255c21",
+      "title": "HiveSec Sentinel — CVE-2026-61740: LightRAG is Vulnerable to Authentication Bypass: hardcoded DEFAULT_TOKEN_SECRET and public /auth-status",
+      "message": "• CVE-2026-61740: LightRAG is Vulnerable to Authentication Bypass: hardcoded DEFAULT_TOKEN_SECRET and public /auth-status defeat LIGHTRAG_API_KEY protection — https://github.com/advisories/GHSA-f4vv-55c2-5789\n• CVE-2026-61736: LightRAG: CORS Wildcard + Credentials Enables Any-Origin Credentialed Requests — https://github.com/advisories/GHSA-6x6h-qqr7-855w\n• CVE-2026-46555: WhatsApp MCP Server is a Model Context Protocol (MCP) server for WhatsApp, enabling Claude to read and send WhatsApp messages. Prior to version 0.2.1, the `whatsapp-bridge` HTTP AP — https://nvd.nist.gov/vuln/detail/CVE-2026-46555",
+      "severity": "warning",
+      "source": "HiveSec Sentinel",
+      "published_at": "2026-07-21T06:30:09+00:00"
+    },
+    {
+      "id": "hivesec-e5014b804f2bf1757277f935",
+      "title": "HiveSec Sentinel — CVE-2026-9323: The urwid web display backend (urwid/display/web.py) generates web session identifiers (urwid_id) in Scre",
+      "message": "• CVE-2026-9323: The urwid web display backend (urwid/display/web.py) generates web session identifiers (urwid_id) in Screen.start() by concatenating two random.randrange(10**9) calls that use Pyth — https://nvd.nist.gov/vuln/detail/CVE-2026-9323\n• CVE-2026-9147: uproot dynamically generates Python class source code from ROOT TStreamerInfo records in a file and compiles it at runtime. Some file-controlled streamer metadata fields (for examp — https://nvd.nist.gov/vuln/detail/CVE-2026-9147\n• CVE-2026-8481: IBM Langflow OSS 1.0.0 through 1.10.0 contain a critical remote code execution vulnerability in the code validation API endpoint. The POST /api/v1/validate/code endpoint accepts us — https://nvd.nist.gov/vuln/detail/CVE-2026-8481",
+      "severity": "warning",
+      "source": "HiveSec Sentinel",
+      "published_at": "2026-07-19T08:25:04+00:00"
+    },
+    {
+      "id": "hivesec-e2afecded63f67e977bc5aa1",
+      "title": "HiveSec Sentinel — CVE-2026-44182: Jupyter Enterprise Gateway launches remote Jupyter Notebook kernels across distributed clusters like Apa",
+      "message": "• CVE-2026-44182: Jupyter Enterprise Gateway launches remote Jupyter Notebook kernels across distributed clusters like Apache Spark, Kubernetes, and Docker Swarm. In versions prior to 3.3.0, the ser — https://nvd.nist.gov/vuln/detail/CVE-2026-44182\n• CVE-2026-44181: Jupyter Enterprise Gateway launches remote Jupyter Notebook kernels across distributed clusters like Apache Spark, Kubernetes, and Docker Swarm. In versions 2.0.0rc2 and above, pri — https://nvd.nist.gov/vuln/detail/CVE-2026-44181\n• CVE-2026-44180: Jupyter Enterprise Gateway launches remote Jupyter Notebook kernels across distributed clusters like Apache Spark, Kubernetes, and Docker Swarm. Versions 2.0.0rc1 and above prior t — https://nvd.nist.gov/vuln/detail/CVE-2026-44180",
+      "severity": "warning",
+      "source": "HiveSec Sentinel",
+      "published_at": "2026-07-18T08:43:09+00:00"
+    },
+    {
+      "id": "hivesec-7a48cadee349a43253c13939",
+      "title": "HiveSec Sentinel — CVE-2026-45695: Kopia is a cross-platform backup tool for Windows, macOS, and Linux with fast incremental backups, clien",
+      "message": "• CVE-2026-45695: Kopia is a cross-platform backup tool for Windows, macOS, and Linux with fast incremental backups, client-side end-to-end encryption, compression, and data deduplication. Prior to — https://nvd.nist.gov/vuln/detail/CVE-2026-45695\n• CVE-2026-58644: Microsoft SharePoint Deserialization of Untrusted Data Vulnerability — https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-58644\n• CVE-2026-59864: Kiota is an OpenAPI based HTTP Client code generator. Prior to 1.32.5, `kiota plugin add` and `kiota plugin generate` (with `-t APIPlugin`) emitted attacker-controlled static_templ — https://nvd.nist.gov/vuln/detail/CVE-2026-59864",
+      "severity": "critical",
+      "source": "HiveSec Sentinel",
+      "published_at": "2026-07-17T06:31:57+00:00"
+    },
+    {
+      "id": "hivesec-9695a786da20886df054fa62",
+      "title": "HiveSec Sentinel — CVE-2026-15409: A Server-side request forgery (SSRF) vulnerability has been identified in the SMA1000 Appliance Work Pla",
+      "message": "• CVE-2026-15409: A Server-side request forgery (SSRF) vulnerability has been identified in the SMA1000 Appliance Work Place interface. A remote unauthenticated attacker could potentially cause the — https://nvd.nist.gov/vuln/detail/CVE-2026-15409\n• GHSA-9hc2-hjx8-q6pv: TidGi Desktop Remote Code Execution via Malicious TiddlyWiki Repository Import — Tiddler Startup Module Auto-Execution — https://github.com/advisories/GHSA-9hc2-hjx8-q6pv\n• CVE-2026-54052: n8n-MCP: Cross-tenant access to workflow version backups in multi-tenant HTTP deployments — https://github.com/advisories/GHSA-j6r7-6fhx-77wx",
+      "severity": "critical",
+      "source": "HiveSec Sentinel",
+      "published_at": "2026-07-16T06:31:56+00:00"
+    },
+    {
+      "id": "hivesec-95656be1ecb324781eb75bec",
+      "title": "HiveSec Sentinel — GHSA-9hc2-hjx8-q6pv: TidGi Desktop Remote Code Execution via Malicious TiddlyWiki Repository Import — Tiddler Startup Mo",
+      "message": "**ALERTA DE SEGURANÇA: VULNERABILIDADES CRÍTICAS EM ECOSISTEMAS DE AUTOMAÇÃO E MÚSICA**\n\n**Situação:**\nNo dia 16 de julho de 2026, foram divulgados múltiplos conselhos de segurança (GHSA e CVE) que afetam ferramentas populares de automação de fluxos de trabalho, gestão de música e interfaces de utilizador. As vulnerabilidades identificadas incluem execução remota de código (RCE) em repositórios Git maliciosos, falhas de isolamento entre inquilinos em servidores de automação e erros de permissão em tokens de autenticação.\n\n**Impacto:**\n*   **Execução de Código Remoto:** A aplicação TidGi Desktop permite a execução de código arbitrário através da importação de repositórios Git maliciosos, devido à execução automática de módulos JavaScript.\n*   **Vazamento de Dados e Integridade:** Em implantações multi-inquilino da ferramenta n8n-MCP, backups de fluxos de trabalho podem ser acessados ou destruídos por outros inquilinos, expondo credenciais e cabeçalhos de autorização.\n*   **RCE via Pesquisa:** A biblioteca django-haystack permite a execução de código ao processar resultados de pesquisa do Elasticsearch que contêm conteúdo controlado por um atacante.\n*   **Acesso Não Autorizado:** O cliente garminconnect cria ficheiros de tokens OAuth com permissões de leitura pública, permitindo a qualquer utilizador local no sistema aceder à conta do utilizador.\n*   **Ataques SSRF:** A aplicação Koel permite a um utilizador autenticado realizar ataques de Serviço de Rede Interna (SSRF) através da funcionalidade de estações de rádio, contornando proteções de URL.\n\n**Ações Recomendadas:**\n*   **Atualização Imediata:** Aplique as correções de segurança disponíveis para as versões afetadas de TidGi, n8n-MCP, django-haystack, garminconnect e Koel.\n*   **Revisão de Permissões:** Verifique e restrinja as permissões de ficheiro do sistema para qualquer aplicação que guarde tokens ou credenciais em disco.\n*   **Validação de Entradas:** Revise a lógica de validação de URLs e a deserialização de dados em componentes que interagem com motores de busca ou APIs externas.\n*   **Monitorização:** Aumente a vigilância sobre tentativas de importação de repositórios Git não autorizados e acesso a recursos de rede interna não previstos.",
+      "severity": "warning",
+      "source": "HiveSec Sentinel",
+      "published_at": "2026-07-16T00:00:19+00:00"
+    },
     {
       "id": "hivesec-b3cf65e272c43eb87629c586",
       "title": "HiveSec Sentinel — GHSA-9hc2-hjx8-q6pv: TidGi Desktop Remote Code Execution via Malicious TiddlyWiki Repository Import — Tiddler Startup Mo",
