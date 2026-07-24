@@ -1,23 +1,7 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-24T15:09:19+00:00",
+  "updated_at": "2026-07-23T06:30:21+00:00",
   "alerts": [
-    {
-      "id": "hivesec-kev-cve-2021-27137",
-      "title": "CISA KEV: DD-WRT Stack-Based Buffer Overflow Vulnerability",
-      "message": "CISA has added CVE-2021-27137 to its Known Exploited Vulnerabilities catalog. Affected: DD-WRT DD-WRT. Recommended action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n\nSource: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
-      "severity": "critical",
-      "source": "HiveSec Sentinel",
-      "published_at": "2026-07-21T00:00:00+00:00"
-    },
-    {
-      "id": "hivesec-kev-cve-2026-16232",
-      "title": "CISA KEV: Check Point SmartConsole Improper Authentication Vulnerability",
-      "message": "CISA has added CVE-2026-16232 to its Known Exploited Vulnerabilities catalog. Affected: Check Point SmartConsole. Recommended action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n\nSource: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
-      "severity": "critical",
-      "source": "HiveSec Sentinel",
-      "published_at": "2026-07-22T00:00:00+00:00"
-    },
     {
       "id": "hivesec-1b2a00b686e7b6a302c365de",
       "title": "HiveSec Sentinel — CVE-2026-50522: Microsoft SharePoint Deserialization of Untrusted Data Vulnerability",

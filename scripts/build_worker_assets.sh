@@ -19,7 +19,6 @@ cp -R \
   bashhive-mark-512.png \
   bashhive-mark.svg \
   bash-heritage-lockup.svg \
-  hivesec-mark.svg \
   hivesec-seal.svg \
   dist/
 

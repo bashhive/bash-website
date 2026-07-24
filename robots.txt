@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /
 
-# Kept private until the public launch and domain cutover are approved.
+# Sitemap: https://bash.pt/sitemap.xml (suspended during construction)
