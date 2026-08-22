@@ -1,7 +1,15 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-22T06:16:14+00:00",
+  "updated_at": "2026-08-22T06:16:40+00:00",
   "alerts": [
+    {
+      "id": "hivesec-kev-cve-2025-62593",
+      "title": "CISA KEV: Ray-Project Ray Code Injection Vulnerability",
+      "message": "CISA has added CVE-2025-62593 to its Known Exploited Vulnerabilities catalog. Affected: Ray-Project Ray. Recommended action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n\nSource: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+      "severity": "critical",
+      "source": "HiveSec Sentinel",
+      "published_at": "2026-08-17T00:00:00+00:00"
+    },
     {
       "id": "hivesec-kev-cve-2025-48700",
       "title": "CISA KEV: Synacor Zimbra Collaboration Suite (ZCS) Cross-site Scripting Vulnerability",
