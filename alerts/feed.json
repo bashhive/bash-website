@@ -1,7 +1,15 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-16T06:32:07+00:00",
+  "updated_at": "2026-08-22T06:01:34+00:00",
   "alerts": [
+    {
+      "id": "hivesec-kev-cve-2026-73570",
+      "title": "CISA KEV: Zimbra Collaboration Suite (ZCS) OS Command Injection Vulnerability",
+      "message": "CISA has added CVE-2026-73570 to its Known Exploited Vulnerabilities catalog. Affected: Synacor Zimbra Collaboration Suite (ZCS). Recommended action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n\nSource: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+      "severity": "critical",
+      "source": "HiveSec Sentinel",
+      "published_at": "2026-08-21T00:00:00+00:00"
+    },
     {
       "id": "hivesec-9695a786da20886df054fa62",
       "title": "HiveSec Sentinel — CVE-2026-15409: A Server-side request forgery (SSRF) vulnerability has been identified in the SMA1000 Appliance Work Pla",
