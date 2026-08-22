@@ -1,7 +1,15 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-22T06:15:47+00:00",
+  "updated_at": "2026-08-22T06:16:14+00:00",
   "alerts": [
+    {
+      "id": "hivesec-kev-cve-2025-48700",
+      "title": "CISA KEV: Synacor Zimbra Collaboration Suite (ZCS) Cross-site Scripting Vulnerability",
+      "message": "CISA has added CVE-2025-48700 to its Known Exploited Vulnerabilities catalog. Affected: Synacor Zimbra Collaboration Suite (ZCS). Recommended action: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n\nSource: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+      "severity": "critical",
+      "source": "HiveSec Sentinel",
+      "published_at": "2026-04-20T00:00:00+00:00"
+    },
     {
       "id": "hivesec-kev-cve-2026-42897",
       "title": "CISA KEV: Microsoft Exchange Server Cross-Site Scripting Vulnerability",
