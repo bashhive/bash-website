@@ -1,7 +1,15 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-22T06:16:40+00:00",
+  "updated_at": "2026-08-24T21:24:15+00:00",
   "alerts": [
+    {
+      "id": "hivesec-kev-cve-2026-21962",
+      "title": "CISA KEV: Oracle HTTP Server and Oracle Weblogic Server Proxy Plug-in Improper Access Control Vulnerability",
+      "message": "CISA has added CVE-2026-21962 to its Known Exploited Vulnerabilities catalog. Affected: Oracle HTTP Server and Oracle Weblogic Server Proxy Plug-in. Recommended action: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.\n\nSource: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+      "severity": "critical",
+      "source": "HiveSec Sentinel",
+      "published_at": "2026-08-24T00:00:00+00:00"
+    },
     {
       "id": "hivesec-kev-cve-2025-62593",
       "title": "CISA KEV: Ray-Project Ray Code Injection Vulnerability",
