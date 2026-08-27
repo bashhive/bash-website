@@ -1,7 +1,15 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-27T14:22:50+00:00",
+  "updated_at": "2026-08-27T14:23:13+00:00",
   "alerts": [
+    {
+      "id": "hivesec-kev-cve-2026-8452",
+      "title": "CISA KEV: Citrix NetScaler ADC and NetScaler Gateway Improper Restriction of Operations within the Bounds of a Memory Bu",
+      "message": "CISA has added CVE-2026-8452 to its Known Exploited Vulnerabilities catalog. Affected: Citrix NetScaler ADC and NetScaler Gateway. Recommended action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n\nSource: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+      "severity": "critical",
+      "source": "HiveSec Sentinel",
+      "published_at": "2026-08-26T00:00:00+00:00"
+    },
     {
       "id": "hivesec-kev-cve-2021-23758",
       "title": "CISA KEV: Ajax.NET Professional Deserialization of Untrusted Data Vulnerability",
