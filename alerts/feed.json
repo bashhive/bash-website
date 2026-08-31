@@ -1,7 +1,15 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-28T10:39:37+00:00",
+  "updated_at": "2026-08-31T17:10:18+00:00",
   "alerts": [
+    {
+      "id": "hivesec-kev-cve-2026-82078",
+      "title": "CISA KEV: PaperCut NG/MF Unsafe Reflection Vulnerability",
+      "message": "CISA has added CVE-2026-82078 to its Known Exploited Vulnerabilities catalog. Affected: PaperCut NG/MF. Recommended action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n\nSource: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+      "severity": "critical",
+      "source": "HiveSec Sentinel",
+      "published_at": "2026-08-31T00:00:00+00:00"
+    },
     {
       "id": "hivesec-kev-cve-2026-66384",
       "title": "CISA KEV: JFrog Artifactory Improper Limitation of a Pathname to a Restricted Directory Vulnerability",
@@ -153,14 +161,6 @@
       "severity": "critical",
       "source": "HiveSec Sentinel",
       "published_at": "2026-06-29T17:15:31+00:00"
-    },
-    {
-      "id": "hivesec-21faa221790ab329743335f0",
-      "title": "HiveSec Sentinel — Operation Endgame 4.0",
-      "message": "• Exposição reportada por hibp-global associada a None.\n• Contas/registos potencialmente afetados: 4 160 519.\n• Alterar imediatamente a credencial afetada por uma única e aleatória.\n• Revogar sessões/tokens ativos e ativar MFA ou passkey.\n• Verificar reutilização da mesma credencial noutros serviços.",
-      "severity": "critical",
-      "source": "HiveSec Sentinel",
-      "published_at": "2026-06-29T17:13:54+00:00"
     }
   ]
 }
