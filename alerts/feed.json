@@ -1,7 +1,15 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-31T17:10:18+00:00",
+  "updated_at": "2026-08-31T17:10:46+00:00",
   "alerts": [
+    {
+      "id": "hivesec-kev-cve-2026-81578",
+      "title": "CISA KEV: PaperCut NG/MF Missing Authentication for Critical Function Vulnerability",
+      "message": "CISA has added CVE-2026-81578 to its Known Exploited Vulnerabilities catalog. Affected: PaperCut NG/MF. Recommended action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n\nSource: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+      "severity": "critical",
+      "source": "HiveSec Sentinel",
+      "published_at": "2026-08-31T00:00:00+00:00"
+    },
     {
       "id": "hivesec-kev-cve-2026-82078",
       "title": "CISA KEV: PaperCut NG/MF Unsafe Reflection Vulnerability",
@@ -153,14 +161,6 @@
       "severity": "critical",
       "source": "HiveSec Sentinel",
       "published_at": "2026-06-29T17:16:07+00:00"
-    },
-    {
-      "id": "hivesec-57e13d3b0fc9cfe4d268e729",
-      "title": "HiveSec Sentinel — Edmunds",
-      "message": "• Exposição reportada por hibp-global associada a edmunds.com.\n• Contas/registos potencialmente afetados: 177 860.\n• Alterar imediatamente a credencial afetada por uma única e aleatória.\n• Revogar sessões/tokens ativos e ativar MFA ou passkey.\n• Verificar reutilização da mesma credencial noutros serviços.",
-      "severity": "critical",
-      "source": "HiveSec Sentinel",
-      "published_at": "2026-06-29T17:15:31+00:00"
     }
   ]
 }
