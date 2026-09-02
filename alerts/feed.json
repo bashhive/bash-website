@@ -1,7 +1,15 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-02T18:32:34+00:00",
+  "updated_at": "2026-09-02T18:33:01+00:00",
   "alerts": [
+    {
+      "id": "hivesec-kev-cve-2026-9586",
+      "title": "CISA KEV: Sangoma Switchvox SQL Injection Vulnerability",
+      "message": "CISA has added CVE-2026-9586 to its Known Exploited Vulnerabilities catalog. Affected: Sangoma Switchvox. Recommended action: Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.\n\nSource: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+      "severity": "critical",
+      "source": "HiveSec Sentinel",
+      "published_at": "2026-09-02T00:00:00+00:00"
+    },
     {
       "id": "hivesec-kev-cve-2026-48710",
       "title": "CISA KEV: Kludex Starlette HTTP Request/Response Smuggling Vulnerability",
@@ -153,14 +161,6 @@
       "severity": "critical",
       "source": "HiveSec Sentinel",
       "published_at": "2026-06-29T21:04:16+00:00"
-    },
-    {
-      "id": "hivesec-ef6d213cffba1357cc1e234c",
-      "title": "HiveSec Sentinel — Dragonica Lunaris",
-      "message": "• Exposição reportada por hibp-global associada a playdragonica.eu.\n• Contas/registos potencialmente afetados: 126 293.\n• Alterar imediatamente a credencial afetada por uma única e aleatória.\n• Revogar sessões/tokens ativos e ativar MFA ou passkey.\n• Verificar reutilização da mesma credencial noutros serviços.",
-      "severity": "critical",
-      "source": "HiveSec Sentinel",
-      "published_at": "2026-06-29T17:18:53+00:00"
     }
   ]
 }
